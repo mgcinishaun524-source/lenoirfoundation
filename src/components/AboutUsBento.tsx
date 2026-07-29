@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+
 export default function AboutUsBento() {
   const images = {
-    leftBlock: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
-    topRightBlock: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
-    bottomRightBlock: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+    leftBlock: communityImg,
+    topRightBlock: digitalLiteracyImg,
+    bottomRightBlock: codingImg,
   };
 
   return (

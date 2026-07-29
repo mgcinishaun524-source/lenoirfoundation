@@ -3,6 +3,10 @@ import { motion } from 'motion/react';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 import BlogsSection from './BlogsSection';
 
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+
 interface AuthoritySectionProps {
   onPostClick?: (postId: string) => void;
 }
@@ -67,7 +71,7 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
             className="rounded-[2rem] overflow-hidden bg-slate-100 min-h-[360px] sm:min-h-[400px] shadow-2xs relative border border-[#dedbc8] group"
           >
             <img
-              src="https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg"
+            src={typingImg}
               alt="Hands on computer training"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -83,7 +87,7 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
             className="rounded-[2rem] overflow-hidden bg-slate-100 min-h-[360px] sm:min-h-[400px] shadow-2xs relative border border-[#dedbc8] group"
           >
             <img
-              src="https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg"
+            src={digitalLiteracyImg}
               alt="Digital literacy classroom"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -100,7 +104,7 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
           >
             {/* Background image with lime green overlay */}
             <img
-              src="https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg"
+              src={communityImg}
               alt="Personalized mentorship session"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -145,6 +149,45 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
           </motion.div>
 
         </div>
+
+        {/* TypeSpark Flagship Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 relative overflow-hidden rounded-[2rem] bg-[#111c24] p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8 shadow-xl"
+        >
+          {/* Subtle background texture */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(241,90,36,0.18)_0%,_transparent_60%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(241,90,36,0.10)_0%,_transparent_60%)] pointer-events-none" />
+
+          {/* Left: Text */}
+          <div className="relative z-10 flex-1">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#f15a24] mb-3">
+              Our Flagship Initiative
+            </span>
+            <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-3">
+              TypeSpark: Where Digital Skills Begin
+            </h3>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+              TypeSpark is our free, offline-first typing and digital literacy platform built specifically for students in low-connectivity environments. It powers every LeNoir tech hub across Uganda and Zimbabwe.
+            </p>
+          </div>
+
+          {/* Right: CTA */}
+          <div className="relative z-10 shrink-0">
+            <a
+              href="https://typespark.fun/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f15a24] hover:bg-orange-500 active:scale-95 text-white font-bold text-sm rounded-2xl shadow-lg shadow-orange-500/20 transition-all"
+            >
+              Visit TypeSpark
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
+          </div>
+        </motion.div>
 
         {/* Embedded Blogs Section */}
         <div className="pt-12 border-t border-[#e5e3d7]">

@@ -3,6 +3,9 @@ import { motion } from 'motion/react';
 import { Heart, ShieldCheck, Sun, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 import PromiseSection from './PromiseSection';
 import ContactSection from './ContactSection';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
 
 interface PromisePageProps {
   onDonateClick: () => void;
@@ -17,7 +20,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
         {/* Background Image for Promise */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <img
-            src="https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg"
+            src={digitalLiteracyImg}
             alt="Students thriving in solar powered digital classroom"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
           />
@@ -130,7 +133,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
             <div className="bg-[#faf8f5] rounded-[1.25rem] overflow-hidden border border-slate-200 hover:border-orange-500/40 flex flex-col justify-between hover:shadow-[0_18px_50px_-25px_rgba(241,90,36,0.22)] transition-all duration-300 group">
               <div className="w-full aspect-[16/10] overflow-hidden relative">
                 <img
-                  src="https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg"
+                  src={typingImg}
                   alt="Offline learning tools"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -159,7 +162,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
             <div className="bg-[#faf8f5] rounded-[1.25rem] overflow-hidden border border-slate-200 hover:border-orange-500/40 flex flex-col justify-between hover:shadow-[0_18px_50px_-25px_rgba(241,90,36,0.22)] transition-all duration-300 group">
               <div className="w-full aspect-[16/10] overflow-hidden relative">
                 <img
-                  src="https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg"
+                  src={communityImg}
                   alt="Long term teacher support"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

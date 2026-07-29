@@ -3,13 +3,17 @@ import { motion } from 'motion/react';
 import { Mail, Linkedin, Globe } from 'lucide-react';
 import { safeHref, safeMailto, sitePrimaryDomain } from '../lib/security';
 
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+
 export default function AboutUsTeam() {
   const teamMembers = [
     {
       name: 'James Mawaka',
       role: 'Founder & Managing Trustee',
       bio: 'James founded the LeNoir Foundation with a profound vision to alleviate digital poverty. He leads global hardware logistics, coordinating strategic installations in remote schools across East Africa.',
-      avatarUrl: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
+      avatarUrl: communityImg,
       linkedin: '#',
       email: 'james@lenoirfoundation.com'
     },
@@ -17,7 +21,7 @@ export default function AboutUsTeam() {
       name: 'Sarah Jenkins',
       role: 'Director of Educational Outreach',
       bio: 'Sarah is an experienced curriculum specialist. She designs localized digital lesson plans and trains regional classroom mentors to deliver sustainable long term educational impact.',
-      avatarUrl: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      avatarUrl: digitalLiteracyImg,
       linkedin: '#',
       email: 'sarah.j@lenoirfoundation.com'
     },
@@ -25,7 +29,7 @@ export default function AboutUsTeam() {
       name: 'Dr. Aris Thorne',
       role: 'Trustee & Technology Lead',
       bio: 'Aris oversees the systems architecture for our off grid servers and solar integration projects. He ensures our classroom hubs run seamlessly without requiring persistent online access.',
-      avatarUrl: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      avatarUrl: codingImg,
       linkedin: '#',
       email: 'aris@lenoirfoundation.com'
     }

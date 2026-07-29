@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+
 export default function AboutUsImpact() {
   const impactCards = [
     {
@@ -8,21 +12,21 @@ export default function AboutUsImpact() {
       author: 'James Mawaka',
       title: 'Equipping School Libraries',
       description: "We build and outfit sustainable technology rooms in school libraries across Uganda and Zimbabwe, providing durable, energy-efficient computer labs, responsive tactile keyboards, and offline-ready servers to eliminate high connectivity costs.",
-      image: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg'
+      image: communityImg
     },
     {
       id: 'ui-2',
       author: 'James Mawaka',
       title: 'TypeSpark Typing Mastery',
       description: "By implementing the structural, gamified Byte Back typing lessons, we help children transition from absolute keyboard beginners to fluid, blind touch typists, opening the primary window of creative computer capability.",
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg'
+      image: digitalLiteracyImg
     },
     {
       id: 'ui-3',
       author: 'James Mawaka',
       title: 'Coding the Future',
       description: "Once baseline speed and touch-typing layouts are secured, children progress directly to coding workshops, local-hosted HTML simulations, and technical design tasks, teaching them to craft their own digital solutions.",
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg'
+      image: codingImg
     }
   ];
 

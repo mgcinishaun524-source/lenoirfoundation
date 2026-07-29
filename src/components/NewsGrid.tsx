@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Clock, User, Calendar, BookOpen, Share2, ThumbsUp, MessageSquare } from 'lucide-react';
 
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+
 interface BlogPost {
   id: string;
   category: 'Education' | 'Community' | 'Technology';
@@ -32,7 +37,7 @@ export default function NewsGrid() {
 At LeNoir Foundation, our key realization was simple: before a child can write code, conduct virtual research, or design a presentation, they must first master standard input. The humble keyboard remains the prime window of creation.
 
 Our TypeSpark software focuses on tactile muscle memory, enabling kids to type naturally and focus on their thoughts rather than hunting for keys. This sets them up for success as they transition to programming languages and digital editing tasks.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg',
+      image: typingImg,
       author: {
         name: 'Thando Mavusa',
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150',

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 
+import heroImg from '../assets/images/hero_background_1781532776444.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+
 export default function ImpactSection() {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -10,28 +15,28 @@ export default function ImpactSection() {
       category: 'INFRASTRUCTURE',
       description: "We don't just donate equipment, we build the rooms to house it. Each LeNoir E Lab is a complete digital learning environment with solar power and governance frameworks.",
       btnText: 'EXPLORE OUR PROJECTS',
-      image: 'https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg',
+      image: heroImg,
     },
     {
       title: 'Digital Champions',
       category: 'CAPACITY BUILDING',
       description: 'Technology without training is just hardware. Our Digital Champions programme embeds local educators with intensive digital literacy training and ongoing mentorship.',
       btnText: 'MEET THE CHAMPIONS',
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      image: digitalLiteracyImg,
     },
     {
       title: 'IT Equipment Donations',
       category: 'HARDWARE REDEPLOYMENT',
       description: 'We partner with UK corporations and universities to responsibly collect end of life IT equipment. Laptops are wiped, preloaded with software, and distributed safely.',
       btnText: 'DONATE IT EQUIPMENT',
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      image: codingImg,
     },
     {
       title: 'Community Outreach',
       category: 'RURAL ENGAGEMENT',
       description: 'Our team travels directly into remote rural districts, delivering workshops, setting up mobile typing stations, and engaging local chiefs and parents for lasting impact.',
       btnText: 'COMMUNITY OUTREACH',
-      image: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
+      image: communityImg,
     },
   ];
 

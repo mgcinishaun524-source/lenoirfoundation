@@ -1,37 +1,41 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import heroImg from '../assets/images/hero_background_1781532776444.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+
 interface BlogsSectionProps {
   onPostClick?: (postId: string) => void;
 }
 
 export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
-  const keyboardImage = 'https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg';
-
   const posts = [
     {
       id: 'b-1',
       title: 'Digital Literacy Workshop for Students',
       date: '10 Aug 2025',
-      image: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
+      image: communityImg,
     },
     {
       id: 'b-2',
       title: 'New Community Learning Hub Launched',
       date: '10 Aug 2025',
-      image: 'https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg',
+      image: heroImg,
     },
     {
       id: 'b-3',
       title: 'Empowering Young Innovators Through Technology',
       date: '10 Aug 2025',
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      image: codingImg,
     },
     {
       id: 'b-4',
       title: 'Back to school Support Initiative',
       date: '10 Aug 2025',
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      image: digitalLiteracyImg,
     },
   ];
 
@@ -72,7 +76,7 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
                 </div>
 
                 <img
-                  src={keyboardImage}
+                  src={typingImg}
                   alt="TypeSpark Africa typing competition hands visual guide"
                   className="w-full h-auto object-cover rounded-[1.5rem]"
                   referrerPolicy="no-referrer"

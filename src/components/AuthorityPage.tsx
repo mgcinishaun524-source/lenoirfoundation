@@ -4,6 +4,7 @@ import { Heart, Scale, FileCheck, Shield } from 'lucide-react';
 import AuthoritySection from './AuthoritySection';
 import AboutUsTeam from './AboutUsTeam';
 import ContactSection from './ContactSection';
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
 
 interface AuthorityPageProps {
   onDonateClick: () => void;
@@ -19,7 +20,7 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
         {/* Background Image for Authority & Governance */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <img
-            src="https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg"
+            src={communityImg}
             alt="Governance and board meeting"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
           />

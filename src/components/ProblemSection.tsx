@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Heart } from 'lucide-react';
 
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
+
 export default function ProblemSection() {
   const cards = [
     {
@@ -10,7 +14,7 @@ export default function ProblemSection() {
       description:
         'In many rural schools across Uganda and Zimbabwe, up to 70 students share a single textbook. Electricity is spotty, internet is non-existent, and children study computer theory on chalkboards without touching a key.',
       stat: '89% Deficit',
-      image: 'https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg',
+      image: typingImg,
       alt: 'Student studying computer keyboard',
     },
     {
@@ -19,7 +23,7 @@ export default function ProblemSection() {
       description:
         'Cultural barriers and economic hardship force young women out of digital spaces first. When families must choose who receives educational resources, girls are far less likely to gain technology training.',
       stat: '40% Equity Gap',
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      image: digitalLiteracyImg,
       alt: 'Young student observing laptop screen',
     },
     {
@@ -28,7 +32,7 @@ export default function ProblemSection() {
       description:
         'The modern global economy demands digital literacy for 90% of entry level jobs. Without basic typing, office software, and internet research skills, youth are permanently locked out of modern employment.',
       stat: '3.5x Career Lock',
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      image: codingImg,
       alt: 'Children engaged in digital classroom learning',
     },
   ];

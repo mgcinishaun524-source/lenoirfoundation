@@ -4,6 +4,7 @@ import { Heart, Users, MapPin, Award, TrendingUp, CheckCircle } from 'lucide-rea
 import ImpactSection from './ImpactSection';
 import TestimonialsSection from './TestimonialsSection';
 import ContactSection from './ContactSection';
+import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
 
 interface ImpactPageProps {
   onDonateClick: () => void;
@@ -18,7 +19,7 @@ export default function ImpactPage({ onDonateClick, onContactClick }: ImpactPage
         {/* Background Image for Impact */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <img
-            src="https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg"
+            src={codingImg}
             alt="Students celebrating digital skills achievement"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
           />

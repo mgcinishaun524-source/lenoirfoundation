@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Heart } from 'lucide-react';
 
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+import heroImg from '../assets/images/hero_background_1781532776444.jpg';
+
 interface PromiseSectionProps {
   onDonateClick?: () => void;
 }
@@ -73,7 +76,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
               className="rounded-[2rem] overflow-hidden min-h-[260px] sm:min-h-[320px] relative shadow-2xs"
             >
               <img
-                src="https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg"
+                src={communityImg}
                 alt="LeNoir Foundation team and community"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -92,7 +95,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
               className="rounded-[2rem] overflow-hidden min-h-[260px] sm:min-h-[320px] relative shadow-2xs order-2 md:order-1"
             >
               <img
-                src="https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg"
+                src={heroImg}
                 alt="LeNoir Foundation classroom environment"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

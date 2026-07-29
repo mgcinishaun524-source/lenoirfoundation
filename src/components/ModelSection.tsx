@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { RefreshCw, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
+import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
+
 export default function ModelSection() {
   const steps = [
     { num: '01', title: 'IT Salvage & Upcycling', status: '100% GDPR WIPED', highlight: false },
@@ -58,7 +60,7 @@ export default function ModelSection() {
             </div>
 
             <img
-              src="https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg"
+              src={typingImg}
               alt="Hands on learning with TypeSpark keyboard visual"
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"

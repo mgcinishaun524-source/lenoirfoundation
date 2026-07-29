@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+const heroImg = 'https://static.wixstatic.com/media/aea8cd_6ddd676224a6447daf129b0503d0bbca~mv2.jpg';
+
 interface HeroSectionProps {
   onDonateClick?: () => void;
 }
 
 export default function HeroSection({ onDonateClick }: HeroSectionProps) {
-  const heroImage = 'https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg';
 
   const handleDonateClick = () => {
     if (onDonateClick) {
@@ -25,7 +26,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
           initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.7 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          src={heroImage}
+          src={heroImg}
           alt="LeNoir Foundation Library children community"
           className="w-full h-full object-cover object-center"
           style={{ filter: 'brightness(0.8)' }}

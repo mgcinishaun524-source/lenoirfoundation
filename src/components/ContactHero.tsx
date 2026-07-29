@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
+
 interface ContactHeroProps {
   onDonateClick?: () => void;
 }
 
 export default function ContactHero({ onDonateClick }: ContactHeroProps) {
-  const heroImage = 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg';
 
   return (
     <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center bg-[#070f16] overflow-hidden pt-24 sm:pt-28">
@@ -14,7 +15,7 @@ export default function ContactHero({ onDonateClick }: ContactHeroProps) {
       {/* Background Graphic mural photo with overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
-          src={heroImage}
+          src={communityImg}
           alt="Empowering Digital Futures for Marginalised Communities"
           className="w-full h-full object-cover object-center opacity-60 brightness-80 scale-100"
           referrerPolicy="no-referrer"

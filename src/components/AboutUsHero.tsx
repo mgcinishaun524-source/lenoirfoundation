@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
+import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
+
 interface AboutUsHeroProps {
   onDonateClick: () => void;
 }
 
 export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
-  const heroImage = 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg';
 
   return (
     <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-center justify-center bg-[#070f16] overflow-hidden pt-24 sm:pt-28">
@@ -14,7 +15,7 @@ export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
       {/* Background Image with Dark Vignette Overlay to match screenshot of About-Hero */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
-          src={heroImage}
+          src={digitalLiteracyImg}
           alt="About Us LeNoir Foundation Library children community"
           className="w-full h-full object-cover object-center scale-100 opacity-65 brightness-80 transition-all"
           referrerPolicy="no-referrer"
