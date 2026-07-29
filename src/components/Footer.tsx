@@ -163,7 +163,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="bg-[#181d24] py-8 text-center text-[10px] sm:text-xs text-slate-300/90 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="tracking-wide">
-            Copyright 2026, All Rights Reserved Peak Family Foundation. Website Design & Developed by ShaunMoyo
+            Copyright 2026, All Rights Reserved LeNoir Foundation. Website Design & Developed by ShaunMoyo
           </p>
         </div>
       </div>
