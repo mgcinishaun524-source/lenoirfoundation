@@ -1,0 +1,6 @@
+{
+  "name": "Empowering Digital Futures",
+  "description": "A landing page and interactive platform dedicated to empowering marginalized communities with critical digital literacy and keyboard styling tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
