@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Only eagerly import first image — rest lazy loaded at runtime
 import img1 from '../assets/images/Website images/IMG_0393.jpg';
+import img2 from '../assets/images/Website images/IMG_0413.jpg';
+import img3 from '../assets/images/Website images/IMG_0351.jpg';
+import img4 from '../assets/images/Website images/IMG_0421.jpg';
+import img5 from '../assets/images/Website images/Copy of IMG_0356.jpg';
 
-const slideSrcs = [
-  img1,
-  new URL('../assets/images/Website images/IMG_0413.jpg', import.meta.url).href,
-  new URL('../assets/images/Website images/IMG_0351.jpg', import.meta.url).href,
-  new URL('../assets/images/Website images/IMG_0421.jpg', import.meta.url).href,
-  new URL('../assets/images/Website images/Copy of IMG_0356.jpg', import.meta.url).href,
-];
+const slideSrcs = [img1, img2, img3, img4, img5];
 
 interface HeroSectionProps {
   onDonateClick?: () => void;
@@ -18,31 +15,14 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onDonateClick }: HeroSectionProps) {
   const [current, setCurrent] = useState(0);
-  const [loaded, setLoaded] = useState<boolean[]>([true, false, false, false, false]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const preload = (idx: number) => {
-      const img = new Image();
-      img.src = slideSrcs[idx];
-      img.onload = () => setLoaded(prev => { const n = [...prev]; n[idx] = true; return n; });
-    };
-    const t1 = setTimeout(() => preload(1), 1000);
-    const t2 = setTimeout(() => preload(2), 2000);
-    const t3 = setTimeout(() => preload(3), 3000);
-    const t4 = setTimeout(() => preload(4), 4000);
-    return () => [t1, t2, t3, t4].forEach(clearTimeout);
-  }, []);
-
-  useEffect(() => {
     timerRef.current = setInterval(() => {
-      setCurrent(prev => {
-        const next = (prev + 1) % slideSrcs.length;
-        return loaded[next] ? next : prev;
-      });
+      setCurrent(prev => (prev + 1) % slideSrcs.length);
     }, 4500);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [loaded]);
+  }, []);
 
   return (
     <header id="home" className="relative bg-[#f5f4f0] pt-28 sm:pt-32 pb-0 overflow-hidden">
@@ -110,12 +90,12 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
                 alt="LeNoir Foundation community"
                 width={1400}
                 height={788}
-                fetchPriority={current === 0 ? 'high' : 'low'}
-                decoding={current === 0 ? 'sync' : 'async'}
-                initial={{ opacity: 0, scale: 1.03 }}
-                animate={{ opacity: 1, scale: 1 }}
+                loading={current === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                transition={{ duration: 0.5 }}
                 className="w-full h-full object-cover object-center"
               />
             </AnimatePresence>
