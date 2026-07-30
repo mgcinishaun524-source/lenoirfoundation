@@ -19,6 +19,8 @@ export default function ContactHero({ onDonateClick }: ContactHeroProps) {
           alt="Empowering Digital Futures for Marginalised Communities"
           className="w-full h-full object-cover object-center opacity-60 brightness-80 scale-100"
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
         />
         {/* Dark gradient shadow */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/45" />

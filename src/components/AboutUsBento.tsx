@@ -34,6 +34,8 @@ export default function AboutUsBento() {
                 alt="LeNoir Foundation Logo"
                 className="h-8 w-auto object-contain"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -45,6 +47,8 @@ export default function AboutUsBento() {
               alt="Community outreach, LeNoir volunteers with students"
               className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
             
             {/* Text Overlay contents */}
@@ -79,6 +83,8 @@ export default function AboutUsBento() {
                   alt="LeNoir Foundation Logo"
                   className="h-6 w-auto object-contain"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -89,6 +95,8 @@ export default function AboutUsBento() {
                 alt="Digital literacy programs"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-end text-white">
@@ -116,6 +124,8 @@ export default function AboutUsBento() {
                   alt="LeNoir Foundation Logo"
                   className="h-6 w-auto object-contain"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -126,6 +136,8 @@ export default function AboutUsBento() {
                 alt="Kids learning to code offline"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-end text-white">

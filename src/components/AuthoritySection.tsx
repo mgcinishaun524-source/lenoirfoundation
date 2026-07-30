@@ -75,6 +75,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               alt="Hands on computer training"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 
@@ -91,6 +93,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               alt="Digital literacy classroom"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 
@@ -107,6 +111,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               src={communityImg}
               alt="Personalized mentorship session"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-[#d8f831]/92 backdrop-blur-[1px]" />
 
@@ -117,6 +123,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
                 alt="LeNoir Foundation Logo"
                 className="h-8 w-auto object-contain"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

@@ -62,6 +62,8 @@ export default function AboutUsImpact() {
                     alt="LeNoir Foundation Logo"
                     className="h-6 w-auto object-contain"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 
@@ -72,6 +74,8 @@ export default function AboutUsImpact() {
                   alt={card.title}
                   className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Overlapped Light Grey Rectangular Author Button Badge */}

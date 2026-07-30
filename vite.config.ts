@@ -1,8 +1,8 @@
-import dotenv from 'dotenv';
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -25,6 +25,7 @@ export default defineConfig(() => {
         compress: {
           drop_console: true,
           drop_debugger: true,
+          passes: 2,
         },
       },
       rollupOptions: {
@@ -39,6 +40,7 @@ export default defineConfig(() => {
       cssMinify: true,
       sourcemap: false,
       chunkSizeWarningLimit: 500,
+      assetsInlineLimit: 0, // never inline images as base64
     },
   };
 });

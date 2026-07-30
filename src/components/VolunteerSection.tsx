@@ -27,6 +27,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&auto=format&fit=crop"
                 alt="Young Black professionals in a workshop"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -36,6 +38,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop"
                 alt="Young Black woman working on laptop"
                 className="w-full h-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -45,6 +49,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600&auto=format&fit=crop"
                 alt="Young Black professionals collaborating"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

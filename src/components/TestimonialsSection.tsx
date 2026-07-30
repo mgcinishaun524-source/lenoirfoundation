@@ -87,6 +87,8 @@ export default function TestimonialsSection() {
                         alt={item.name}
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover object-center"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>

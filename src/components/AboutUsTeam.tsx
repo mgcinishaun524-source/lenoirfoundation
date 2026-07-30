@@ -74,6 +74,8 @@ export default function AboutUsTeam() {
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Absolute badging inside image frame */}
