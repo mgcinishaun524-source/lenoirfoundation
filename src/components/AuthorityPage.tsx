@@ -23,7 +23,7 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
             src={communityImg}
             alt="Governance and board meeting"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/35 via-[#070f16]/10 to-[#070f16]/50" />
         </div>
 
@@ -80,7 +80,7 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
                   src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1400&auto=format&fit=crop"
                   alt="UK Registered Charity"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#111c24] mb-3 leading-snug">UK Registered Charity</h3>
@@ -108,7 +108,7 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
                   src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop"
                   alt="Audited Accounts"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#111c24] mb-3 leading-snug">Audited Accounts</h3>
@@ -136,7 +136,7 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
                   src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1400&auto=format&fit=crop"
                   alt="Child Safeguarding"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#111c24] mb-3 leading-snug">Child Safeguarding</h3>

@@ -60,7 +60,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
             library resources, and improved internet accessibility.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — matching site style */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,32 +69,33 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
           >
             <button
               onClick={onDonateClick}
-              className="px-8 py-3.5 bg-[#e8d44d] hover:bg-[#dfc93a] active:scale-95 text-[#111c24] font-bold text-sm rounded-full shadow-sm transition-all cursor-pointer"
+              className="px-8 py-3 bg-[#f15a24] hover:bg-orange-600 active:scale-95 text-white font-bold text-sm rounded-xl shadow-md shadow-orange-500/20 transition-all cursor-pointer"
             >
               Give
             </button>
             <button
               onClick={onDonateClick}
-              className="px-8 py-3.5 bg-[#e8d44d] hover:bg-[#dfc93a] active:scale-95 text-[#111c24] font-bold text-sm rounded-full shadow-sm transition-all cursor-pointer"
+              className="px-8 py-3 text-sm font-bold text-orange-600 hover:text-white border border-orange-500/40 hover:border-orange-600 hover:bg-orange-600 rounded-xl transition-all cursor-pointer"
             >
               Build
             </button>
           </motion.div>
         </div>
 
-        {/* Full-width image slideshow — no side padding, no rounded corners on sides */}
+        {/* Centered image slideshow — reasonable width, centered */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
-          className="w-full relative"
+          className="px-4 sm:px-6 lg:px-8 pb-16"
         >
-          <div className="relative w-full overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-slate-100">
+          <div className="relative max-w-4xl mx-auto overflow-hidden aspect-[16/9] rounded-2xl bg-slate-100 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.18)]">
             <AnimatePresence mode="wait">
               <motion.img
                 key={current}
                 src={slides[current]}
                 alt="LeNoir Foundation community"
+                loading="eager"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -102,9 +103,6 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
                 className="w-full h-full object-cover object-center"
               />
             </AnimatePresence>
-
-            {/* Subtle bottom fade into page */}
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f5f4f0]/60 to-transparent pointer-events-none" />
 
             {/* Slide dots */}
             <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2 z-10">

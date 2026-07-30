@@ -56,7 +56,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
                   alt="LeNoir Foundation Logo"
                   className="h-8 w-auto object-contain"
                   referrerPolicy="no-referrer"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#111c24] mb-4 leading-snug">
@@ -80,7 +80,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
                 alt="LeNoir Foundation team and community"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-              />
+               loading="lazy" decoding="async" />
             </motion.div>
           </div>
 
@@ -99,7 +99,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
                 alt="LeNoir Foundation classroom environment"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-              />
+               loading="lazy" decoding="async" />
             </motion.div>
 
             {/* Vision Cream Card Right */}
@@ -117,7 +117,7 @@ export default function PromiseSection({ onDonateClick }: PromiseSectionProps) {
                   alt="LeNoir Foundation Logo"
                   className="h-8 w-auto object-contain"
                   referrerPolicy="no-referrer"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#111c24] mb-4 leading-snug">

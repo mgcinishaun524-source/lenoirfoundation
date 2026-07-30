@@ -14,7 +14,7 @@ export default function GetInTouchPage() {
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
             alt="Team working together"
             className="w-full h-full object-cover object-center opacity-50 brightness-75"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/40 via-[#070f16]/15 to-[#070f16]/55" />
         </div>
 

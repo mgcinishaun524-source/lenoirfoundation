@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 
 dotenv.config();
 
@@ -17,6 +17,28 @@ export default defineConfig(() => {
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+    },
+    build: {
+      target: 'es2020',
+      minify: 'terser' as const,
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: ['react', 'react-dom'],
+            motion: ['motion/react'],
+            lucide: ['lucide-react'],
+          },
+        },
+      },
+      cssMinify: true,
+      sourcemap: false,
+      chunkSizeWarningLimit: 500,
     },
   };
 });

@@ -22,7 +22,7 @@ export default function ImpactPage({ onDonateClick, onContactClick }: ImpactPage
             src={codingImg}
             alt="Students celebrating digital skills achievement"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/35 via-[#070f16]/10 to-[#070f16]/50" />
         </div>
 
@@ -79,7 +79,7 @@ export default function ImpactPage({ onDonateClick, onContactClick }: ImpactPage
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1400&auto=format&fit=crop"
                   alt="Uganda rural school landscape"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <div className="p-2 bg-white/90 backdrop-blur-sm rounded-lg">
@@ -105,7 +105,7 @@ export default function ImpactPage({ onDonateClick, onContactClick }: ImpactPage
                   src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=1400&auto=format&fit=crop"
                   alt="Zimbabwe community landscape"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <div className="p-2 bg-white/90 backdrop-blur-sm rounded-lg">

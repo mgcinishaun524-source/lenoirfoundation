@@ -3,11 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LeNoir Foundation</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://api.web3forms.com https://maps.googleapis.com; frame-src https://www.google.com https://www.youtube.com; base-uri 'self'; form-action 'self' https://formsubmit.co https://api.web3forms.com; frame-ancestors 'self'; upgrade-insecure-requests;" />
+
+    <!-- Primary Meta Tags -->
+    <title>LeNoir Foundation — Bridging the Digital Divide for Children in Africa</title>
+    <meta name="title" content="LeNoir Foundation — Bridging the Digital Divide for Children in Africa" />
+    <meta name="description" content="LeNoir Foundation uplifts marginalised communities through digital literacy, library resources, and improved internet accessibility. Donate laptops, volunteer, or partner with us to bring tech education to underserved children." />
+    <meta name="keywords" content="LeNoir Foundation, digital literacy Africa, donate laptops, tech education, computer labs Africa, digital divide, charity UK, STEM education, community outreach, TypeSpark, school libraries, volunteer Africa" />
+    <meta name="author" content="LeNoir Foundation" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://lenoirfoundation.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lenoirfoundation.com/" />
+    <meta property="og:title" content="LeNoir Foundation — Bridging the Digital Divide for Children in Africa" />
+    <meta property="og:description" content="We uplift marginalised communities through digital literacy, library resources, and improved internet accessibility. Join us in bringing tech education to underserved children." />
+    <meta property="og:image" content="https://lenoirfoundation.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="LeNoir Foundation" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lenoirfoundation.com/" />
+    <meta property="twitter:title" content="LeNoir Foundation — Bridging the Digital Divide for Children in Africa" />
+    <meta property="twitter:description" content="We uplift marginalised communities through digital literacy, library resources, and improved internet accessibility. Join us in bringing tech education to underserved children." />
+    <meta property="twitter:image" content="https://lenoirfoundation.com/og-image.jpg" />
+
+    <!-- Theme / Mobile -->
+    <meta name="theme-color" content="#f15a24" />
+    <meta name="msapplication-TileColor" content="#f15a24" />
+    <meta name="apple-mobile-web-app-title" content="LeNoir Foundation" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Performance: Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="dns-prefetch" href="https://formsubmit.co" />
+    <link rel="dns-prefetch" href="https://api.web3forms.com" />
+
+    <!-- Performance: Preload Critical Font (if using Google Fonts, swap in your actual font link) -->
+    <!-- <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin /> -->
+
+    <!-- JSON-LD Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "LeNoir Foundation",
+      "alternateName": "LeNoir Foundation UK",
+      "url": "https://lenoirfoundation.com",
+      "logo": "https://lenoirfoundation.com/logo.png",
+      "description": "LeNoir Foundation uplifts marginalised communities through digital literacy, library resources, and improved internet accessibility.",
+      "sameAs": [
+        "https://www.facebook.com/lenoirfoundation",
+        "https://twitter.com/lenoirfoundation",
+        "https://www.linkedin.com/company/lenoir-foundation",
+        "https://www.instagram.com/lenoirfoundation"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "85 to 90 Paul Street",
+        "addressLocality": "London",
+        "addressRegion": "England",
+        "postalCode": "EC2A 4NE",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+44-20-7101-4110",
+        "contactType": "General Enquiries",
+        "availableLanguage": "English",
+        "areaServed": "GB"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "James Mawaka"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: WebSite (Sitelinks Searchbox) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LeNoir Foundation",
+      "url": "https://lenoirfoundation.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://lenoirfoundation.com/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -23,7 +23,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
             src={digitalLiteracyImg}
             alt="Students thriving in solar powered digital classroom"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/35 via-[#070f16]/10 to-[#070f16]/50" />
         </div>
 
@@ -78,7 +78,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
                   src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop"
                   alt="Financial auditing and transparency"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/92 via-transparent to-transparent" />
               </div>
               <div className="p-6 sm:p-7">
@@ -107,7 +107,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
                   src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"
                   alt="Off grid solar panels"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/92 via-transparent to-transparent" />
               </div>
               <div className="p-6 sm:p-7">
@@ -136,7 +136,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
                   src={typingImg}
                   alt="Offline learning tools"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/92 via-transparent to-transparent" />
               </div>
               <div className="p-6 sm:p-7">
@@ -165,7 +165,7 @@ export default function PromisePage({ onDonateClick, onContactClick }: PromisePa
                   src={communityImg}
                   alt="Long term teacher support"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/92 via-transparent to-transparent" />
               </div>
               <div className="p-6 sm:p-7">

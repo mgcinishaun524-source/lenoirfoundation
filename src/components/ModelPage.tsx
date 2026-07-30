@@ -20,7 +20,7 @@ export default function ModelPage({ onDonateClick, onContactClick }: ModelPagePr
             src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1600&auto=format&fit=crop"
             alt="Solar powered tech hub construction"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/40 via-[#070f16]/10 to-[#070f16]/55" />
         </div>
 
@@ -78,7 +78,7 @@ export default function ModelPage({ onDonateClick, onContactClick }: ModelPagePr
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop"
                   alt="Students learning in solar powered digital hub"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-sans font-medium bg-black/45 backdrop-blur-sm px-3 py-2 rounded-xl border border-white/10">
                   <span className="font-bold text-[#ffb88a] uppercase tracking-wider text-[10px] block mb-0.5">Blueprint in Action</span>

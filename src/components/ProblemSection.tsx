@@ -81,7 +81,7 @@ export default function ProblemSection() {
                   alt="LeNoir Foundation Logo"
                   className="h-7 w-auto object-contain"
                   referrerPolicy="no-referrer"
-                />
+                 loading="lazy" decoding="async" />
               </div>
 
               <div>
@@ -92,7 +92,7 @@ export default function ProblemSection() {
                     alt={card.alt}
                     className="w-full h-full object-cover grayscale-15 hover:grayscale-0 hover:scale-103 transition-all duration-500"
                     referrerPolicy="no-referrer"
-                  />
+                   loading="lazy" decoding="async" />
                 </div>
 
                 <h3 className="font-display text-xl sm:text-2xl font-extrabold text-[#111c24] text-center mb-2 leading-snug">
