@@ -33,8 +33,9 @@ const ModelPage = lazy(() => import('./components/ModelPage'));
 const ImpactPage = lazy(() => import('./components/ImpactPage'));
 const AuthorityPage = lazy(() => import('./components/AuthorityPage'));
 const GetInTouchPage = lazy(() => import('./components/GetInTouchPage'));
+const DigitalLiteracyPage = lazy(() => import('./components/DigitalLiteracyPage'));
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training';
 
 // Minimal fallback — no spinner, just invisible placeholder to avoid layout shift
 const PageFallback = () => <div className="min-h-screen bg-[#faf8f5]" aria-hidden="true" />;
@@ -91,6 +92,8 @@ export default function App() {
             </>
           ) : currentPage === 'getintouch' ? (
             <GetInTouchPage />
+          ) : currentPage === 'training' ? (
+            <DigitalLiteracyPage onDonateClick={handleDonateRedirect} onContactClick={() => setCurrentPage('contact')} />
           ) : currentPage === 'contact' ? (
             <>
               <ContactHero onDonateClick={handleDonateRedirect} />

@@ -32,7 +32,7 @@ export default function GetInTouchPage() {
               <span className="block text-[#f15a24]">and answer your questions.</span>
             </h1>
             <p className="mt-6 text-sm sm:text-lg text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
-              Whether you want to volunteer, donate hardware, partner with us, or simply learn more — drop us a message and we'll get back to you within 48 hours.
+              Whether you want to volunteer, donate hardware, partner with us, or simply learn more, drop us a message and we'll get back to you within 48 hours.
             </p>
           </motion.div>
         </div>

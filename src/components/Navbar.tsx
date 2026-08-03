@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Heart, ChevronDown } from 'lucide-react';
 import LeNoirLogo from './LeNoirLogo';
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training';
 
 interface NavbarProps {
   currentPage?: PageType;
@@ -75,16 +75,9 @@ export default function Navbar({ currentPage = 'landing', setCurrentPage }: Navb
                 <a 
                   href="#about" 
                   onClick={(e) => handleNavItemClick(e, '#about', 'about')} 
-                  className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-t-xl"
+                  className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl"
                 >
                   About Us
-                </a>
-                <a 
-                  href="#founders" 
-                  onClick={(e) => handleNavItemClick(e, '#founders', 'about')} 
-                  className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-b-xl"
-                >
-                  Leadership Board
                 </a>
               </div>
             </div>
@@ -128,12 +121,30 @@ export default function Navbar({ currentPage = 'landing', setCurrentPage }: Navb
                 <a 
                   href="#authority" 
                   onClick={(e) => handleNavItemClick(e, '#authority', 'authority')} 
-                  className={`block px-4 py-2.5 text-xs font-semibold hover:bg-orange-50 hover:text-orange-600 rounded-b-xl ${currentPage === 'authority' ? 'text-orange-600 bg-orange-50/50' : 'text-slate-700'}`}
+                  className={`block px-4 py-2.5 text-xs font-semibold hover:bg-orange-50 hover:text-orange-600 ${currentPage === 'authority' ? 'text-orange-600 bg-orange-50/50' : 'text-slate-700'}`}
                 >
                   5. Authority & Trust
                 </a>
+                <a 
+                  href="#training" 
+                  onClick={(e) => handleNavItemClick(e, '#training', 'training')} 
+                  className={`block px-4 py-2.5 text-xs font-semibold hover:bg-orange-50 hover:text-orange-600 rounded-b-xl ${currentPage === 'training' ? 'text-orange-600 bg-orange-50/50' : 'text-slate-700'}`}
+                >
+                  Digital Literacy Training
+                </a>
               </div>
             </div>
+
+            {/* UK Programme Link */}
+            <a
+              href="#training"
+              onClick={(e) => handleNavItemClick(e, '#training', 'training')}
+              className={`font-sans text-sm font-bold transition-colors py-2 ${
+                currentPage === 'training' ? 'text-orange-600' : 'text-slate-800 hover:text-orange-600'
+              }`}
+            >
+              UK Programme
+            </a>
 
             {/* Volunteer Link - No dropdown */}
             <a
@@ -207,7 +218,9 @@ export default function Navbar({ currentPage = 'landing', setCurrentPage }: Navb
                 <a href="#model" onClick={(e) => handleNavItemClick(e, '#model', 'model')} className="block px-2 py-1 text-xs font-semibold text-slate-600 hover:text-orange-600">3. Operational Model</a>
                 <a href="#impact" onClick={(e) => handleNavItemClick(e, '#impact', 'impact')} className="block px-2 py-1 text-xs font-semibold text-slate-600 hover:text-orange-600">4. Real Impact</a>
                 <a href="#authority" onClick={(e) => handleNavItemClick(e, '#authority', 'authority')} className="block px-2 py-1 text-xs font-semibold text-slate-600 hover:text-orange-600">5. Authority & Trust</a>
+                <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className={`block px-2 py-1 text-xs font-semibold hover:text-orange-600 ${currentPage === 'training' ? 'text-orange-600' : 'text-slate-600'}`}>Digital Literacy Training</a>
               </div>
+              <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className={`block px-3 py-1.5 text-sm font-bold rounded-lg ${currentPage === 'training' ? 'text-orange-600' : 'text-slate-800'}`}>UK Programme</a>
               <a href="#blogs" onClick={(e) => handleNavItemClick(e, '#blogs', 'news')} className="block px-3 py-1.5 text-sm font-bold text-slate-800 rounded-lg">Blogs & Updates</a>
               
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">

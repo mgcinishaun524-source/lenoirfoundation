@@ -4,15 +4,17 @@ import { MapPin, Navigation, Compass, ExternalLink, ShieldCheck, Bus, Train } fr
 import { safeHref } from '../lib/security';
 
 export default function ContactMap() {
-  const [mapType, setMapType] = useState<'satellite' | 'roadmap'>('satellite');
+  const [mapType, setMapType] = useState<'satellite' | 'roadmap'>('roadmap');
   
   // Exact UK Office Details
   const address = "86 to 90 Paul Street, Shoreditch, London, EC2A 4NE, United Kingdom";
   
-  // Google Map embed URLs for Satellite ('t=k') vs Normal Roadmap ('t=m')
+  // OpenStreetMap embed URLs — no API key required, no content-blocking issues
+  // Satellite-style uses Esri World Imagery layer; roadmap uses default OSM tiles
+  // Coordinates: 86-90 Paul Street, Shoreditch, London EC2A 4NE (51.5248, -0.0878)
   const mapUrl = mapType === 'satellite'
-    ? "https://maps.google.com/maps?q=86-90%20Paul%20Street,%20London%20EC2A%204NE&t=k&z=18&ie=UTF8&iwloc=&output=embed"
-    : "https://maps.google.com/maps?q=86-90%20Paul%20Street,%20London%20EC2A%204NE&t=m&z=16&ie=UTF8&iwloc=&output=embed";
+    ? "https://www.openstreetmap.org/export/embed.html?bbox=-0.0928%2C51.5228%2C-0.0828%2C51.5268&layer=cyclemap&marker=51.5248%2C-0.0878"
+    : "https://www.openstreetmap.org/export/embed.html?bbox=-0.0928%2C51.5228%2C-0.0828%2C51.5268&layer=mapnik&marker=51.5248%2C-0.0878";
 
   // External link for real directions
   const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=86-90+Paul+Street+London+EC2A+4NE";
@@ -40,13 +42,12 @@ export default function ContactMap() {
           {/* Real Embedded Google Map with Satellite styling preset Toggle */}
           <iframe
             src={mapUrl}
-            title="LeNoir Headquarters Satellite View"
+            title="LeNoir Headquarters Map"
             width="100%"
             height="100%"
             className="border-0 select-none"
             allowFullScreen={false}
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
           />
 
           {/* Interactive Toggle Control Top-Left */}
@@ -59,7 +60,7 @@ export default function ContactMap() {
                   : 'text-slate-300 hover:text-white'
               }`}
             >
-              Satellite View
+              Cycle Map
             </button>
             <button
               onClick={() => setMapType('roadmap')}

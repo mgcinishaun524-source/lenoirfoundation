@@ -3,7 +3,7 @@ import { SendHorizontal, Check } from 'lucide-react';
 import LeNoirLogo from './LeNoirLogo';
 import { getSafeFormSubmitEndpoint, sanitizeHeaderString, safeHref, siteContactEmail, sitePrimaryDomain } from '../lib/security';
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training';
 
 interface FooterProps {
   setCurrentPage?: (page: PageType) => void;
@@ -31,7 +31,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             Accept: 'application/json',
           },
           body: JSON.stringify({
-            _subject: sanitizeHeaderString(`New Newsletter Subscriber  LeNoir Foundation — ${cleanEmail}`, 160),
+            _subject: sanitizeHeaderString(`New Newsletter Subscriber from LeNoir Foundation  ${cleanEmail}`, 160),
             email: cleanEmail,
             _honey: '',
             _captcha: 'false',
@@ -95,7 +95,8 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <a href="#about" onClick={(e) => handleNavItemClick(e, '#about', 'about')} className="hover:text-[#f15a24] transition-colors">How We Work</a>
               <a href="#contact" onClick={(e) => handleNavItemClick(e, '#contact', 'contact')} className="hover:text-[#f15a24] transition-colors">Where We Work</a>
               <a href="#flagship" onClick={(e) => handleNavItemClick(e, '#flagship')} className="hover:text-[#f15a24] transition-colors">TypeSpark Africa</a>
-              <a href="#contact" onClick={(e) => handleNavItemClick(e, '#contact', 'contact')} className="hover:text-[#f15a24] transition-colors">UK Programme</a>
+              <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className="hover:text-[#f15a24] transition-colors">UK Programme</a>
+              <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className="hover:text-[#f15a24] transition-colors">Digital Literacy Training</a>
             </div>
           </div>
 
@@ -163,7 +164,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="bg-[#181d24] py-8 text-center text-[10px] sm:text-xs text-slate-300/90 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="tracking-wide">
-            Copyright 2026, All Rights Reserved LeNoir Foundation. Website Design & Developed by ShaunMoyo
+            Copyright 2026, All Rights Reserved LeNoirFoundation. Website Designed & Developed by ShaunMoyo
           </p>
         </div>
       </div>

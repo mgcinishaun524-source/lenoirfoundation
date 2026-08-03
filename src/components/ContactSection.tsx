@@ -43,7 +43,7 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
       const cleanEmail = sanitizeHeaderString(formData.email, 120);
       const cleanSubject = sanitizeHeaderString(
         cleanName
-          ? `New Contact Message  LeNoir Foundation — from ${cleanName}${cleanEmail ? ` (${cleanEmail})` : ''}`
+          ? `New Contact Message  LeNoir Foundation · from ${cleanName}${cleanEmail ? ` (${cleanEmail})` : ''}`
           : 'New Contact Message  LeNoir Foundation',
         180,
       );
@@ -255,7 +255,7 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-10 py-3.5 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 disabled:opacity-50 text-white font-bold text-sm sm:text-base uppercase tracking-wider rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
+                  className="px-10 py-3.5 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 disabled:opacity-50 text-white font-bold text-sm sm:text-base uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
                 >
                   {loading ? 'Sending...' : 'SEND'}
                 </button>

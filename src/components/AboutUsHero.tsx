@@ -58,7 +58,7 @@ export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
         >
           <button
             onClick={onDonateClick}
-            className="px-10 py-3.5 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-orange-500/10 transition-all cursor-pointer"
+            className="px-10 py-3.5 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-orange-500/10 transition-all cursor-pointer"
           >
             Donate Now
           </button>

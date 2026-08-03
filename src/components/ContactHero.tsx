@@ -58,7 +58,7 @@ export default function ContactHero({ onDonateClick }: ContactHeroProps) {
         >
           <button
             onClick={onDonateClick}
-            className="px-8 sm:px-10 py-4 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 text-white font-sans font-extrabold text-sm sm:text-base tracking-wide rounded-2xl shadow-xl shadow-orange-600/20 hover:shadow-orange-600/35 transition-all duration-300 transform cursor-pointer"
+            className="px-8 sm:px-10 py-4 bg-[#f15a24] hover:bg-[#e04f1c] active:scale-95 text-white font-sans font-extrabold text-sm sm:text-base tracking-wide rounded-xl shadow-xl shadow-orange-600/20 hover:shadow-orange-600/35 transition-all duration-300 transform cursor-pointer"
           >
             Donate Now
           </button>

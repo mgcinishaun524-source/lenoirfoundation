@@ -56,8 +56,16 @@ export default function FlagshipSection() {
             </h3>
 
             <p className="mt-6 text-sm sm:text-base text-slate-500 font-sans leading-relaxed font-normal">
-              Most children in the communities we serve have never touched a keyboard. Before they can learn to code, research, or create, they need to learn the most fundamental digital skill of all: typing. TypeSpark is our answer: A free, offline first typing tutor built specifically for children aged 6 to 16. It uses the Byte Back methodology  the same structured approach used in schools across Africa and the UK to guide learners from their first keystrokes on the home row to full keyboard mastery across 24 lessons and 7 stages.
+              Most children in the communities we serve have never touched a keyboard. Before they can learn to code, research, or create, they need to learn the most fundamental digital skill of all: typing. TypeSpark is our answer: A free, offline first typing tutor built specifically for children aged 6 to 16. It uses the Byte Back methodology, the same structured approach used in schools across Africa and the UK, to guide learners from their first keystrokes on the home row to full keyboard mastery across 24 lessons and 7 stages.
             </p>
+
+            {/* UK Kids Coding Club callout */}
+            <div className="mt-8 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm">
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-[#f15a24] mb-2">UK Programme · Kids Coding Club</span>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our UK coding club has seen remarkable success, offering young enthusiasts a gateway into the digital world. Over six weeks, eighteen students discovered the transformative potential of coding, developing confidence and analytical thinking alongside technical skills. We're now expanding the club to Zimbabwe, where young participants will create their very own computer games.
+              </p>
+            </div>
 
             {/* Orange Visit Button precisely aligned */}
             <div className="mt-8 flex flex-wrap gap-4 items-center">
@@ -65,7 +73,7 @@ export default function FlagshipSection() {
                 href="https://typespark.fun/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#f15a24] hover:bg-[#e04f1c] text-white font-bold text-sm sm:text-base rounded-2xl active:scale-95 transition-all shadow-md shadow-orange-500/10 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#f15a24] hover:bg-[#e04f1c] text-white font-bold text-sm sm:text-base rounded-xl active:scale-95 transition-all shadow-md shadow-orange-500/10 cursor-pointer"
               >
                 <span>Visit TypeSpark app</span>
                 <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#f15a24]">

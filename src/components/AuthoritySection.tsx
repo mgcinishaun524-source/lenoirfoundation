@@ -189,7 +189,7 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               href="https://typespark.fun/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f15a24] hover:bg-orange-500 active:scale-95 text-white font-bold text-sm rounded-2xl shadow-lg shadow-orange-500/20 transition-all"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f15a24] hover:bg-orange-500 active:scale-95 text-white font-bold text-sm rounded-xl shadow-lg shadow-orange-500/20 transition-all"
             >
               Visit TypeSpark
               <ArrowRight size={16} strokeWidth={2.5} />
