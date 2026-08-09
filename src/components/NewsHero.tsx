@@ -14,8 +14,11 @@ export default function NewsHero() {
           alt="Our Latest News and Blogs LeNoir Foundation"
           className="w-full h-full object-cover object-center scale-100 opacity-65 brightness-80"
           referrerPolicy="no-referrer"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
+          width={1600}
+          height={900}
         />
         {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/40" />

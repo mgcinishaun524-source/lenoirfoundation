@@ -95,7 +95,12 @@ export default function DonationPage() {
             src="https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg"
             alt="Donate to empower digital futures"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-           loading="lazy" decoding="async" />
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width={1600}
+            height={900}
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/35 via-[#070f16]/10 to-[#070f16]/55" />
         </div>
 

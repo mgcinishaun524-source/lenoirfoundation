@@ -19,8 +19,11 @@ export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
           alt="About Us LeNoir Foundation Library children community"
           className="w-full h-full object-cover object-center scale-100 opacity-65 brightness-80 transition-all"
           referrerPolicy="no-referrer"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
+          width={1600}
+          height={900}
         />
         {/* Transparent dark gradient and overlay as pictured */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/35" />

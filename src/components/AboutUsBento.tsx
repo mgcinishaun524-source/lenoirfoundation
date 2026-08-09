@@ -36,6 +36,8 @@ export default function AboutUsBento() {
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
+                width={300}
+                height={80}
               />
             </div>
 
@@ -49,6 +51,8 @@ export default function AboutUsBento() {
               referrerPolicy="no-referrer"
               loading="lazy"
               decoding="async"
+              width={1500}
+              height={1125}
             />
             
             {/* Text Overlay contents */}
@@ -97,6 +101,8 @@ export default function AboutUsBento() {
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
+                width={1200}
+                height={900}
               />
 
               <div className="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-end text-white">
@@ -138,6 +144,8 @@ export default function AboutUsBento() {
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
+                width={1200}
+                height={900}
               />
 
               <div className="absolute inset-0 z-20 p-6 sm:p-8 flex flex-col justify-end text-white">

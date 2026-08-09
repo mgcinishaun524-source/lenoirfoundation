@@ -20,7 +20,12 @@ export default function ProblemPage({ onDonateClick, onContactClick }: ProblemPa
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop"
             alt="Rural classroom without digital access"
             className="w-full h-full object-cover object-center opacity-55 brightness-70"
-           loading="lazy" decoding="async" />
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width={1600}
+            height={900}
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/40 via-[#070f16]/15 to-[#070f16]/55" />
         </div>
 
@@ -83,7 +88,11 @@ export default function ProblemPage({ onDonateClick, onContactClick }: ProblemPa
                     src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1200&auto=format&fit=crop"
                     alt="0 Hardware Access"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={900}
+                  />
                 </div>
 
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-[#111c24] mb-1 tracking-wide">
@@ -127,7 +136,11 @@ export default function ProblemPage({ onDonateClick, onContactClick }: ProblemPa
                     src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"
                     alt="Infrastructure Barriers"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={900}
+                  />
                 </div>
 
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-[#111c24] mb-1 tracking-wide">
@@ -171,7 +184,11 @@ export default function ProblemPage({ onDonateClick, onContactClick }: ProblemPa
                     src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop"
                     alt="Resource Deficits"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={900}
+                  />
                 </div>
 
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-[#111c24] mb-1 tracking-wide">

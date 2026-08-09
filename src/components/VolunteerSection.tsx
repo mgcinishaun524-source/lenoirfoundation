@@ -29,6 +29,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
+                width={900}
+                height={1200}
               />
             </div>
 
@@ -40,6 +42,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
                 decoding="async"
+                width={600}
+                height={900}
               />
             </div>
 
@@ -51,6 +55,8 @@ export default function VolunteerSection({ onContactClick }: VolunteerSectionPro
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
+                width={600}
+                height={600}
               />
             </div>
 

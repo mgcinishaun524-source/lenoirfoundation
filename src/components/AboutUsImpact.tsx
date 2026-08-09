@@ -64,6 +64,8 @@ export default function AboutUsImpact() {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
+                    width={240}
+                    height={64}
                   />
                 </div>
                 
@@ -76,6 +78,8 @@ export default function AboutUsImpact() {
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"
+                  width={1600}
+                  height={1000}
                 />
 
                 {/* Overlapped Light Grey Rectangular Author Button Badge */}

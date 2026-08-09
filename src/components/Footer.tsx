@@ -3,7 +3,7 @@ import { SendHorizontal, Check } from 'lucide-react';
 import LeNoirLogo from './LeNoirLogo';
 import { getSafeFormSubmitEndpoint, sanitizeHeaderString, safeHref, siteContactEmail, sitePrimaryDomain } from '../lib/security';
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
 
 interface FooterProps {
   setCurrentPage?: (page: PageType) => void;
@@ -95,7 +95,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <a href="#about" onClick={(e) => handleNavItemClick(e, '#about', 'about')} className="hover:text-[#f15a24] transition-colors">How We Work</a>
               <a href="#contact" onClick={(e) => handleNavItemClick(e, '#contact', 'contact')} className="hover:text-[#f15a24] transition-colors">Where We Work</a>
               <a href="#flagship" onClick={(e) => handleNavItemClick(e, '#flagship')} className="hover:text-[#f15a24] transition-colors">TypeSpark Africa</a>
-              <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className="hover:text-[#f15a24] transition-colors">UK Programme</a>
+              <a href="#ukprogramme" onClick={(e) => handleNavItemClick(e, '#ukprogramme', 'ukprogramme')} className="hover:text-[#f15a24] transition-colors">UK Programme</a>
               <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className="hover:text-[#f15a24] transition-colors">Digital Literacy Training</a>
             </div>
           </div>

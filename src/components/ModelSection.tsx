@@ -56,7 +56,11 @@ export default function ModelSection() {
                 alt="LeNoir Foundation Logo"
                 className="h-8 w-auto object-contain"
                 referrerPolicy="no-referrer"
-               loading="lazy" decoding="async" />
+                loading="lazy"
+                decoding="async"
+                width={300}
+                height={80}
+              />
             </div>
 
             <img
@@ -64,7 +68,11 @@ export default function ModelSection() {
               alt="Hands on learning with TypeSpark keyboard visual"
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
-             loading="lazy" decoding="async" />
+              loading="lazy"
+              decoding="async"
+              width={900}
+              height={1200}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
             
             <div className="relative z-10 text-white">
@@ -133,7 +141,11 @@ export default function ModelSection() {
                   src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop"
                   alt="Off grid solar infrastructure"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={800}
+                />
                 <div className="absolute inset-0 bg-[#f6f5ef]/90 backdrop-blur-[2px]" />
                 <div className="relative z-10 p-6 flex flex-col items-center justify-center">
                   <div className="w-16 h-16 rounded-2xl bg-[#222220] text-white flex items-center justify-center mb-4 shadow-sm">
@@ -174,7 +186,11 @@ export default function ModelSection() {
                 src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1600&auto=format&fit=crop"
                 alt="Solar powered classroom infrastructure"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
-               loading="lazy" decoding="async" />
+                loading="lazy"
+                decoding="async"
+                width={1600}
+                height={900}
+              />
               <div className="absolute inset-0 bg-[#1c1c1a]/92 backdrop-blur-[1px]" />
               <div className="relative z-10 bg-[#fef8eb] text-[#222220] rounded-2xl p-5 sm:p-6 shadow-lg border border-[#f3e6c8]">
                 <div className="flex items-center gap-2 mb-2">

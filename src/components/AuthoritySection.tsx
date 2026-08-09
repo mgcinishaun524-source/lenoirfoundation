@@ -77,6 +77,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               referrerPolicy="no-referrer"
               loading="lazy"
               decoding="async"
+              width={1200}
+              height={900}
             />
           </motion.div>
 
@@ -95,6 +97,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               referrerPolicy="no-referrer"
               loading="lazy"
               decoding="async"
+              width={1200}
+              height={900}
             />
           </motion.div>
 
@@ -113,6 +117,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
               decoding="async"
+              width={1200}
+              height={900}
             />
             <div className="absolute inset-0 bg-[#d8f831]/92 backdrop-blur-[1px]" />
 
@@ -125,6 +131,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
+                width={300}
+                height={80}
               />
             </div>
 

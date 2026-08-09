@@ -76,6 +76,8 @@ export default function AboutUsTeam() {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
+                    width={1200}
+                    height={900}
                   />
                   
                   {/* Absolute badging inside image frame */}

@@ -220,8 +220,11 @@ export default function DigitalLiteracyPage({ onDonateClick, onContactClick }: D
             src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
             alt="Digital literacy training session"
             className="w-full h-full object-cover object-center opacity-40 brightness-75"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
+            width={1600}
+            height={900}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#070f16]/50 via-[#070f16]/20 to-[#070f16]/70" />
         </div>
@@ -429,6 +432,8 @@ export default function DigitalLiteracyPage({ onDonateClick, onContactClick }: D
                               className="relative w-full aspect-square rounded-[22px] object-cover shadow-xl transition-transform duration-700 group-hover:scale-[1.03]"
                               loading="lazy"
                               decoding="async"
+                              width={800}
+                              height={800}
                             />
                           </div>
                         </div>
@@ -443,6 +448,8 @@ export default function DigitalLiteracyPage({ onDonateClick, onContactClick }: D
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                         loading="lazy"
                         decoding="async"
+                        width={isWidePhoto ? 1600 : 900}
+                        height={isWidePhoto ? 900 : 1125}
                       />
                       <div
                         className={`absolute inset-0 ${
@@ -621,6 +628,8 @@ export default function DigitalLiteracyPage({ onDonateClick, onContactClick }: D
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
+                    width={900}
+                    height={1200}
                   />
 
                   {/* Dark gradient overlay */}

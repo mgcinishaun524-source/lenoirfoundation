@@ -45,7 +45,11 @@ export default function FlagshipSection() {
                 alt="TypeSpark Color Coded Tactile Keyboard Tutor Chart"
                 className="w-full h-auto object-contain rounded-2xl drop-shadow-sm"
                 referrerPolicy="no-referrer"
-               loading="lazy" decoding="async" />
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={600}
+              />
             </motion.div>
           </div>
 

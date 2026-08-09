@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Heart, ChevronDown } from 'lucide-react';
 import LeNoirLogo from './LeNoirLogo';
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
 
 interface NavbarProps {
   currentPage?: PageType;
@@ -137,10 +137,10 @@ export default function Navbar({ currentPage = 'landing', setCurrentPage }: Navb
 
             {/* UK Programme Link */}
             <a
-              href="#training"
-              onClick={(e) => handleNavItemClick(e, '#training', 'training')}
+              href="#ukprogramme"
+              onClick={(e) => handleNavItemClick(e, '#ukprogramme', 'ukprogramme')}
               className={`font-sans text-sm font-bold transition-colors py-2 ${
-                currentPage === 'training' ? 'text-orange-600' : 'text-slate-800 hover:text-orange-600'
+                currentPage === 'ukprogramme' ? 'text-orange-600' : 'text-slate-800 hover:text-orange-600'
               }`}
             >
               UK Programme
@@ -220,7 +220,7 @@ export default function Navbar({ currentPage = 'landing', setCurrentPage }: Navb
                 <a href="#authority" onClick={(e) => handleNavItemClick(e, '#authority', 'authority')} className="block px-2 py-1 text-xs font-semibold text-slate-600 hover:text-orange-600">5. Authority & Trust</a>
                 <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className={`block px-2 py-1 text-xs font-semibold hover:text-orange-600 ${currentPage === 'training' ? 'text-orange-600' : 'text-slate-600'}`}>Digital Literacy Training</a>
               </div>
-              <a href="#training" onClick={(e) => handleNavItemClick(e, '#training', 'training')} className={`block px-3 py-1.5 text-sm font-bold rounded-lg ${currentPage === 'training' ? 'text-orange-600' : 'text-slate-800'}`}>UK Programme</a>
+              <a href="#ukprogramme" onClick={(e) => handleNavItemClick(e, '#ukprogramme', 'ukprogramme')} className={`block px-3 py-1.5 text-sm font-bold rounded-lg ${currentPage === 'ukprogramme' ? 'text-orange-600' : 'text-slate-800'}`}>UK Programme</a>
               <a href="#blogs" onClick={(e) => handleNavItemClick(e, '#blogs', 'news')} className="block px-3 py-1.5 text-sm font-bold text-slate-800 rounded-lg">Blogs & Updates</a>
               
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">

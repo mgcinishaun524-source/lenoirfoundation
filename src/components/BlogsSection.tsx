@@ -72,7 +72,11 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
                     alt="LeNoir Foundation Logo"
                     className="h-7 w-auto object-contain"
                     referrerPolicy="no-referrer"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={280}
+                    height={73}
+                  />
                 </div>
 
                 <img
@@ -80,7 +84,11 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
                   alt="TypeSpark Africa typing competition hands visual guide"
                   className="w-full h-auto object-cover rounded-[1.5rem]"
                   referrerPolicy="no-referrer"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={900}
+                />
               </div>
 
               {/* Precise Typography and description immediately below */}
@@ -119,7 +127,11 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-350"
                       referrerPolicy="no-referrer"
-                     loading="lazy" decoding="async" />
+                      loading="lazy"
+                      decoding="async"
+                      width={150}
+                      height={100}
+                    />
                   </div>
 
                   {/* Right side Text: title and date */}

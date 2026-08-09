@@ -239,7 +239,11 @@ This rugged construction minimizes downtime and lowers overall school technology
                     alt="LeNoir Foundation Logo"
                     className="h-6 w-auto object-contain"
                     referrerPolicy="no-referrer"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={240}
+                    height={64}
+                  />
                 </div>
 
                 <img
@@ -247,7 +251,11 @@ This rugged construction minimizes downtime and lowers overall school technology
                   alt={post.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1000}
+                />
               </div>
 
               {/* Card Meta and details body */}
@@ -280,7 +288,11 @@ This rugged construction minimizes downtime and lowers overall school technology
                     alt={post.author.name}
                     className="w-9 h-9 rounded-full object-cover border border-slate-100"
                     referrerPolicy="no-referrer"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={150}
+                    height={150}
+                  />
                   <div>
                     <h5 className="font-sans text-xs font-bold text-slate-800">
                       {post.author.name}
@@ -337,7 +349,11 @@ This rugged construction minimizes downtime and lowers overall school technology
                   alt={selectedPost.title}
                   className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={900}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex flex-col justify-end p-8 text-white" />
               </div>
 
@@ -366,7 +382,11 @@ This rugged construction minimizes downtime and lowers overall school technology
                     alt={selectedPost.author.name}
                     className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-xs"
                     referrerPolicy="no-referrer"
-                   loading="lazy" decoding="async" />
+                    loading="lazy"
+                    decoding="async"
+                    width={150}
+                    height={150}
+                  />
                   <div>
                     <h5 className="font-sans text-sm font-extrabold text-slate-800">
                       {selectedPost.author.name}
