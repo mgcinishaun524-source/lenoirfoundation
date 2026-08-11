@@ -94,22 +94,23 @@ const courses = [
     image: course1Bg,
   },
   {
-    id: 'teacher-training',
+    id: 'digital-skills-asylum-seekers',
     number: '02',
-    icon: GraduationCap,
-    tag: 'EDUCATOR DEVELOPMENT',
-    title: 'Teacher Training Programme',
-    subtitle: 'Fostering digital skills across Zimbabwe through schools.',
+    icon: Globe,
+    tag: 'UK · EMPLOYMENT · COMMUNITY',
+    title: 'Digital Skills for Asylum Seekers: Breaking Down Barriers to Employment',
+    subtitle: 'Practical UK-focused programme for employment, public services, and community connection.',
     description:
-      'Fostering digital skills across Zimbabwe requires collaboration with educational institutions and teaching professionals to integrate coding education directly into school curricula. Our 2025 initiative launches a pioneering Teacher Development Programme partnering with three Harare government schools, equipping 60 educators with the skills to deliver digital literacy instruction to more than 1,000 pupils.',
+      `A UK-based programme helping asylum seekers gain the digital skills needed for employment, public services, and community connection. One of the Foundation's newest programme streams and its first substantial UK-adult beneficiary-focused offering — extending the portfolio beyond its historical child (Kids Coding Club) and international (Uganda, Zimbabwe) focus.`,
     outcomes: [
-      '60 educators trained in first cohort',
-      'Digital literacy instruction skills',
-      '3 Harare government school partners',
-      'National framework pathway',
+      'Device basics: using a laptop or tablet, keyboard skills, file management',
+      'Internet and email: creating an email account, sending and receiving messages, staying safe online',
+      'Online public services: registering with a GP, accessing the Home Office portal, using gov.uk',
+      'Job searching: creating a CV digitally, using job boards, attending online interviews',
+      'Communication tools: video calls, messaging platforms, and staying connected with family',
     ],
-    highlight: 'Reaching 1,000+ pupils per cohort',
-    note: 'Following successful implementation, we aim to collaborate with governmental authorities to establish a nationwide teacher training framework that brings computing education to every school throughout Zimbabwe.',
+    highlight: 'UK delivery — employment & public services readiness',
+    note: 'Delivered in the UK only. Recognises that digital literacy is now a prerequisite for accessing public services, employment, and community life.',
     image: course2Bg,
   },
   {
@@ -190,9 +191,9 @@ const charityServices = [
 type CourseFilter = 'all' | 'beginner' | 'educator' | 'kids' | 'advanced' | 'ai' | 'certificate';
 
 const filterToCourses: Record<CourseFilter, string[]> = {
-  all: ['computer-basics', 'teacher-training', 'kids-coding', 'ai-for-everyone'],
+  all: ['computer-basics', 'digital-skills-asylum-seekers', 'kids-coding', 'ai-for-everyone'],
   beginner: ['computer-basics'],
-  educator: ['teacher-training'],
+  educator: [],
   kids: ['kids-coding'],
   advanced: ['ai-for-everyone'],
   ai: ['ai-for-everyone'],
