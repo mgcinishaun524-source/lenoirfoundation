@@ -11,9 +11,7 @@ import websiteBg from '../assets/images/optimized/typing_hand_visual_17815328459
 import grantBg from '../assets/images/optimized/digital_literacy_1781532795243.webp';
 import emailBg from '../assets/images/optimized/coding_for_kids_1781532812034.webp';
 
-import audreyBg from '../assets/images/optimized/IMG_0421.webp';
-import shellyBg from '../assets/images/optimized/IMG_0437.webp';
-import zharnaBg from '../assets/images/optimized/IMG_0414.webp';
+// Team images removed
 
 import course1Bg from '../assets/images/optimized/IMG_0393.webp';
 import course2Bg from '../assets/images/optimized/IMG_0436.webp';
@@ -661,119 +659,7 @@ export default function DigitalLiteracyPage({ onDonateClick, onContactClick }: D
         </div>
       </section>
 
-      {/* ── Team — project-card style: heading with gold accents + photo cards ─── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-slate-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Header block — split 12-col layout (left eyebrow, right title) */}
-          <div className="text-center mb-14 sm:mb-16">
-            <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-black uppercase tracking-[0.22em] text-slate-400 mb-4">
-              <span className="w-5 h-[2px] bg-[#f15a24] inline-block" />
-              Our Team
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-[#112335] mb-5">
-              The Driving Forces That
-              <br className="hidden sm:block" />
-              <span className="text-[#f15a24] font-black">Define Our Success</span>
-            </h2>
-            <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              Our collective brings together a richly diverse team of skilled professionals who've partnered with renowned global brands, united by a shared passion for elevating non-profit organisations.
-            </p>
-          </div>
-
-          {/* Horizontal row of 3 project-style team cards with large image + bottom info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
-            {[
-              {
-                name: 'Audrey Gideon',
-                role: 'Front End Developer',
-                tags: ['CREATIVE', 'FRONT END'],
-                bio: '4+ Years · UK & Africa',
-                accent: '#7bc144',
-                image: audreyBg,
-              },
-              {
-                name: 'Shelly Johnson',
-                role: 'Social Media Manager',
-                tags: ['MARKETING', 'BRAND'],
-                bio: '5+ Years · Global Campaigns',
-                accent: '#26c6c6',
-                image: shellyBg,
-              },
-              {
-                name: 'Zharna Akter',
-                role: 'Grants & Partnerships',
-                tags: ['LEADERSHIP', 'GRANTS'],
-                bio: '6+ Years · UN & Dev Orgs',
-                accent: '#2196c4',
-                image: zharnaBg,
-              },
-            ].map((member, idx) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group flex flex-col"
-              >
-                {/* Avatar placeholder block */}
-                <div
-                  className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] aspect-[3/4] mb-5 flex flex-col items-center justify-center"
-                  style={{ background: `linear-gradient(135deg, ${member.accent}18 0%, ${member.accent}35 100%)`, border: `2px solid ${member.accent}30` }}
-                >
-                  {/* Large person icon */}
-                  <div
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mb-4 shadow-lg"
-                    style={{ backgroundColor: `${member.accent}25`, border: `3px solid ${member.accent}50` }}
-                  >
-                    <User size={48} style={{ color: member.accent }} strokeWidth={1.5} />
-                  </div>
-
-                  {/* Pill tags */}
-                  <div className="flex flex-wrap justify-center gap-2 px-4">
-                    {member.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider"
-                        style={{ backgroundColor: `${member.accent}20`, color: member.accent, border: `1px solid ${member.accent}40` }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Subtle decorative circles */}
-                  <div className="absolute top-4 right-4 w-12 h-12 rounded-full opacity-20" style={{ backgroundColor: member.accent }} />
-                  <div className="absolute bottom-4 left-4 w-8 h-8 rounded-full opacity-15" style={{ backgroundColor: member.accent }} />
-                </div>
-
-                {/* Bottom info */}
-                <div className="pl-1">
-                  <h3 className="font-display text-xl sm:text-2xl font-black text-[#112335] tracking-tight leading-tight mb-1.5">
-                    {member.name}
-                  </h3>
-                  <p className="text-slate-500 text-sm sm:text-[15px] font-semibold leading-snug mb-1">
-                    {member.role}
-                  </p>
-                  <p className="text-slate-400 text-xs sm:text-[13px] font-medium">
-                    {member.bio}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Trust bar */}
-          <div className="mt-14 sm:mt-16 text-center">
-            <Award size={18} className="inline-block text-[#f15a24] mb-2" />
-            <p className="text-slate-400 text-xs sm:text-[13px] font-sans">
-              Partnered with renowned global brands including UN bodies and international development organisations.
-            </p>
-          </div>
-
-        </div>
-      </section>
+      {/* Team section removed per request */}
 
       {/* ── CTA / Contact ─────────────────────────────────────── */}
       <ContactSection onNavigateToContact={onContactClick} />
