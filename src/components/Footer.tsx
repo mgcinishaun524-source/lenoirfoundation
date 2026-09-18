@@ -72,6 +72,39 @@ export default function Footer({ setCurrentPage }: FooterProps) {
   return (
     <footer id="footer" className="bg-[#f3f6f9] text-[#1c2e42] font-sans scroll-mt-20 border-t border-slate-200">
       
+      {/* Partners Section - Added above main footer */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+          <div className="text-center mb-8">
+            <h4 className="font-display font-extrabold text-lg text-[#112335] uppercase tracking-wider mb-2">
+              Our Partners
+            </h4>
+            <p className="text-sm text-slate-500">
+              Proudly supported by innovative technology partners
+            </p>
+          </div>
+          
+          <div className="flex justify-center items-center">
+            <a 
+              href="https://elevenlabs.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 px-8 py-5 bg-white border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all duration-200"
+            >
+              {/* ElevenLabs Official Logo */}
+              <div className="flex items-center justify-center">
+                <img 
+                  src="https://eleven-public-cdn.elevenlabs.io/payloadcms/elevenlabs-official-logo.svg"
+                  alt="ElevenLabs"
+                  className="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Upper Main Footer section with light background matching screenshot */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">

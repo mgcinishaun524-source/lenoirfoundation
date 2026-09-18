@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useFoldable } from './hooks/useFoldable';
 
 // Critical — loaded immediately
 import Navbar from './components/Navbar';
@@ -35,6 +36,8 @@ const AuthorityPage = lazy(() => import('./components/AuthorityPage'));
 const GetInTouchPage = lazy(() => import('./components/GetInTouchPage'));
 const DigitalLiteracyPage = lazy(() => import('./components/DigitalLiteracyPage'));
 const UKProgrammePage = lazy(() => import('./components/UKProgrammePage'));
+const FoldableDemo = lazy(() => import('./components/FoldableDemo'));
+const AIAssistant = lazy(() => import('./components/AIAssistant'));
 
 type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
 
@@ -43,6 +46,7 @@ const PageFallback = () => <div className="min-h-screen bg-[#faf8f5]" aria-hidde
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('landing');
+  const foldable = useFoldable();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,14 +54,34 @@ export default function App() {
 
   const handleDonateRedirect = () => setCurrentPage('donate');
 
+  // Dynamic class names based on foldable state
+  const getAppClasses = () => {
+    let classes = "min-h-screen bg-[#faf8f5] text-slate-850 font-sans selection:bg-orange-500 selection:text-white flex flex-col justify-between";
+    
+    if (foldable.isUnfolded) {
+      classes += " foldable-unfolded";
+    }
+    if (foldable.isTentMode) {
+      classes += " foldable-tent-mode";
+    }
+    if (foldable.isOuterScreen) {
+      classes += " foldable-outer-screen";
+    }
+    if (foldable.screenSpanning === 'dual') {
+      classes += " foldable-dual-screen";
+    }
+    
+    return classes;
+  };
+
   return (
-    <div id="root-viewport" className="min-h-screen bg-[#faf8f5] text-slate-850 font-sans selection:bg-orange-500 selection:text-white flex flex-col justify-between">
+    <div id="root-viewport" className={getAppClasses()}>
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-      <main className="flex-grow pt-16 sm:pt-20">
+      <main className={`flex-grow pt-16 sm:pt-20 ${foldable.isTentMode ? 'tent-mode-container' : ''}`}>
         <Suspense fallback={<PageFallback />}>
           {currentPage === 'landing' ? (
-            <>
+            <div className={foldable.screenSpanning === 'dual' ? 'foldable-layout' : ''}>
               <HeroSection onDonateClick={handleDonateRedirect} />
               <AboutSection onReadMoreClick={() => setCurrentPage('about')} />
               <PromiseSection onDonateClick={handleDonateRedirect} />
@@ -66,7 +90,7 @@ export default function App() {
               <ImpactSection />
               <AuthoritySection onPostClick={() => setCurrentPage('news')} />
               <ContactSection onNavigateToContact={() => setCurrentPage('contact')} />
-            </>
+            </div>
           ) : currentPage === 'problem' ? (
             <ProblemPage onDonateClick={handleDonateRedirect} onContactClick={() => setCurrentPage('contact')} />
           ) : currentPage === 'promise' ? (
@@ -115,7 +139,55 @@ export default function App() {
         </Suspense>
       </main>
 
+      {/* iPhone Duo Tent Mode Controls */}
+      {foldable.isTentMode && (
+        <div className="tent-mode-controls">
+          <div className="tent-nav-controls">
+            <button 
+              className="tent-nav-button"
+              onClick={() => setCurrentPage('landing')}
+            >
+              Home
+            </button>
+            <button 
+              className="tent-nav-button"
+              onClick={() => setCurrentPage('about')}
+            >
+              About
+            </button>
+            <button 
+              className="tent-nav-button"
+              onClick={() => setCurrentPage('ukprogramme')}
+            >
+              UK Programme
+            </button>
+            <button 
+              className="tent-nav-button"
+              onClick={() => setCurrentPage('donate')}
+            >
+              Donate
+            </button>
+            <button 
+              className="tent-nav-button"
+              onClick={() => setCurrentPage('contact')}
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
+
       <Footer setCurrentPage={setCurrentPage} />
+      
+      {/* iPhone Duo Development Demo - Remove in production */}
+      <Suspense fallback={null}>
+        <FoldableDemo />
+      </Suspense>
+
+      {/* AI Assistant */}
+      <Suspense fallback={null}>
+        <AIAssistant />
+      </Suspense>
     </div>
   );
 }

@@ -1,0 +1,329 @@
+/* iPhone Duo Foldable Responsive Styles */
+
+/* ====== FOLDABLE DEVICE DETECTION ====== */
+@media (spanning: single-fold-vertical) {
+  /* Dual-screen mode when unfolded */
+  .foldable-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 100vh;
+  }
+  
+  .foldable-left-panel {
+    padding-right: env(fold-width, 20px);
+  }
+  
+  .foldable-right-panel {
+    padding-left: env(fold-width, 20px);
+  }
+}
+
+/* ====== iPhone Duo OUTER SCREEN (5.4" - Folded) ====== */
+@media screen and (max-width: 430px) and (max-height: 932px) and (orientation: portrait) {
+  /* Compact folded state - optimize for one-handed use */
+  
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.875rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .button-group {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  .button-primary, .button-secondary {
+    width: 100% !important;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Compress sections for folded view */
+  .section-padding {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Hide less critical elements on outer screen */
+  .fold-hide-outer {
+    display: none !important;
+  }
+}
+
+/* ====== iPhone Duo INNER SCREEN (7.6" - Unfolded) ====== */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-aspect-ratio: 0.8) and (max-aspect-ratio: 1.2) {
+  /* Passport/square-ish format when unfolded */
+  
+  body {
+    font-size: 1rem;
+  }
+  
+  .hero-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+    max-width: 600px !important;
+  }
+  
+  /* Optimize for wide passport layout */
+  .foldable-duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Show enhanced content on unfolded screen */
+  .fold-show-inner {
+    display: block !important;
+  }
+}
+
+/* ====== iPhone Duo TENT MODE (Half-folded) ====== */
+@media screen and (max-width: 430px) and (orientation: landscape) and (max-height: 500px) {
+  /* Tent/laptop mode - bottom half as trackpad, top as display */
+  
+  .tent-mode-container {
+    height: 50vh; /* Use only top half */
+    overflow-y: auto;
+  }
+  
+  .tent-mode-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    background: rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .tent-nav-controls {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .tent-nav-button {
+    padding: 1rem 2rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .tent-nav-button:hover {
+    background: #f97316;
+    color: white;
+    border-color: #f97316;
+  }
+}
+
+/* ====== MULTITASKING SPLIT VIEW ====== */
+@media screen and (spanning: single-fold-vertical) {
+  .split-view-left {
+    grid-column: 1;
+    padding-right: 1rem;
+    border-right: 1px solid #e5e7eb;
+  }
+  
+  .split-view-right {
+    grid-column: 2;
+    padding-left: 1rem;
+  }
+  
+  /* Navigation optimized for split view */
+  .navbar-split {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Content sections for dual screen */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    min-height: 100vh;
+  }
+  
+  .hero-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .hero-image-right {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
+}
+
+/* ====== FOLDABLE ANIMATIONS ====== */
+@media (prefers-reduced-motion: no-preference) {
+  .fold-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .unfold-reveal {
+    animation: unfoldReveal 0.6s ease-out;
+  }
+  
+  @keyframes unfoldReveal {
+    0% {
+      transform: rotateY(-90deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotateY(-45deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+}
+
+/* ====== SAFE AREAS & FOLD MARGINS ====== */
+.foldable-safe-area {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.fold-margin {
+  margin-left: env(fold-left, 0px);
+  margin-right: env(fold-right, 0px);
+}
+
+/* ====== TOUCH OPTIMIZATIONS ====== */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch-first interactions for foldable */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .button-primary, .button-secondary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .nav-link {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* ====== ACCESSIBILITY FOR FOLDABLES ====== */
+@media (prefers-reduced-motion: reduce) {
+  .fold-transition,
+  .unfold-reveal {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .foldable-layout {
+    border: 2px solid;
+  }
+  
+  .split-view-left {
+    border-right: 3px solid;
+  }
+}
+
+/* ====== COMPONENT-SPECIFIC FOLDABLE OPTIMIZATIONS ====== */
+
+/* Hero Section - Dual Screen Layout */
+.hero-foldable {
+  @media (spanning: single-fold-vertical) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+}
+
+/* Navigation - Collapsible for outer screen */
+.nav-foldable {
+  @media screen and (max-width: 430px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .mobile-menu-toggle {
+      display: block;
+    }
+  }
+}
+
+/* Cards - Responsive grid for different screen states */
+.cards-foldable {
+  @media screen and (max-width: 430px) {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (spanning: single-fold-vertical) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Footer - Compact for outer, expanded for inner */
+.footer-foldable {
+  @media screen and (max-width: 430px) {
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  @media (spanning: single-fold-vertical) {
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+}
