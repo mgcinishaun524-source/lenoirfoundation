@@ -36,7 +36,6 @@ const AuthorityPage = lazy(() => import('./components/AuthorityPage'));
 const GetInTouchPage = lazy(() => import('./components/GetInTouchPage'));
 const DigitalLiteracyPage = lazy(() => import('./components/DigitalLiteracyPage'));
 const UKProgrammePage = lazy(() => import('./components/UKProgrammePage'));
-const FoldableDemo = lazy(() => import('./components/FoldableDemo'));
 const AIAssistant = lazy(() => import('./components/AIAssistant'));
 
 type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
@@ -178,11 +177,6 @@ export default function App() {
       )}
 
       <Footer setCurrentPage={setCurrentPage} />
-      
-      {/* iPhone Duo Development Demo - Remove in production */}
-      <Suspense fallback={null}>
-        <FoldableDemo />
-      </Suspense>
 
       {/* AI Assistant */}
       <Suspense fallback={null}>
