@@ -3,10 +3,6 @@ import { motion } from 'motion/react';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 import BlogsSection from './BlogsSection';
 
-import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
-import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
-import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
-
 interface AuthoritySectionProps {
   onPostClick?: (postId: string) => void;
 }
@@ -71,8 +67,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
             className="rounded-[2rem] overflow-hidden bg-slate-100 min-h-[360px] sm:min-h-[400px] shadow-2xs relative border border-[#dedbc8] group"
           >
             <img
-            src={typingImg}
-              alt="Hands on computer training"
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop"
+              alt="Professional development training"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -91,8 +87,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
             className="rounded-[2rem] overflow-hidden bg-slate-100 min-h-[360px] sm:min-h-[400px] shadow-2xs relative border border-[#dedbc8] group"
           >
             <img
-            src={digitalLiteracyImg}
-              alt="Digital literacy classroom"
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop"
+              alt="Technology education classroom"
               className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -112,8 +108,8 @@ export default function AuthoritySection({ onPostClick }: AuthoritySectionProps)
           >
             {/* Background image with lime green overlay */}
             <img
-              src={communityImg}
-              alt="Personalized mentorship session"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop"
+              alt="Community mentorship program"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
               decoding="async"

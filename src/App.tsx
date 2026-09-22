@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 const AboutSection = lazy(() => import('./components/AboutSection'));
 const PromiseSection = lazy(() => import('./components/PromiseSection'));
 const ProblemSection = lazy(() => import('./components/ProblemSection'));
-const ModelSection = lazy(() => import('./components/ModelSection'));
+const TypeSparkSection = lazy(() => import('./components/ModelSection'));
 const ImpactSection = lazy(() => import('./components/ImpactSection'));
 const AuthoritySection = lazy(() => import('./components/AuthoritySection'));
 const ContactSection = lazy(() => import('./components/ContactSection'));
@@ -85,7 +85,7 @@ export default function App() {
               <AboutSection onReadMoreClick={() => setCurrentPage('about')} />
               <PromiseSection onDonateClick={handleDonateRedirect} />
               <ProblemSection />
-              <ModelSection />
+              <TypeSparkSection />
               <ImpactSection />
               <AuthoritySection onPostClick={() => setCurrentPage('news')} />
               <ContactSection onNavigateToContact={() => setCurrentPage('contact')} />
@@ -100,7 +100,6 @@ export default function App() {
               <AboutUsStory />
               <AboutUsBento />
               <AboutUsImpact />
-              <AboutUsTeam />
               <ContactSection onNavigateToContact={() => setCurrentPage('contact')} />
             </>
           ) : currentPage === 'model' ? (

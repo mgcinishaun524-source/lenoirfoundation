@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Clock, User, Calendar, BookOpen, Share2, ThumbsUp, MessageSquare } from 'lucide-react';
 
-import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
-import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
-import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
-import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
-
 interface BlogPost {
   id: string;
   category: 'Education' | 'Community' | 'Technology';
@@ -37,7 +32,7 @@ export default function NewsGrid() {
 At LeNoir Foundation, our key realization was simple: before a child can write code, conduct virtual research, or design a presentation, they must first master standard input. The humble keyboard remains the prime window of creation.
 
 Our TypeSpark software focuses on tactile muscle memory, enabling kids to type naturally and focus on their thoughts rather than hunting for keys. This sets them up for success as they transition to programming languages and digital editing tasks.`,
-      image: typingImg,
+      image: 'https://images.unsplash.com/photo-1573164574511-73c773193279?w=800&auto=format&fit=crop',
       author: {
         name: 'Thando Mavusa',
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150',
@@ -56,7 +51,7 @@ Our TypeSpark software focuses on tactile muscle memory, enabling kids to type n
 Through our local simulations, we turn standard libraries into robust tech installations. By leveraging Raspberry Pi grids loaded with TypeSpark lessons, offline Wikipedia, and offline typing tutors, children gain the leverage they need to build structural confidence with computers at no ongoing cost to their local community.
 
 These local libraries serve as after-school hubs where children can collaborate, learn at their own pace, and receive peer validation.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop',
       author: {
         name: 'Chinedu Okeke',
         avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
@@ -75,7 +70,7 @@ These local libraries serve as after-school hubs where children can collaborate,
 We designed TypeSpark to store progress logs locally, serialize data into lightweight profiles, and rely on embedded SVG components instead of heavy internet packages. By utilizing lightweight local database systems on the client, children's progress is persisted smoothly across power cycles, without transmitting data to centralized servers.
 
 This methodology makes digital learning resilient, durable, and highly cost-effective for schools with tight infrastructure budgets.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop',
       author: {
         name: 'Amina El-Amin',
         avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150',
@@ -94,7 +89,7 @@ This methodology makes digital learning resilient, durable, and highly cost-effe
 Byte Back methodology treats rows of keys as climbing levels. Beginning with 'Home Row Basics', students unlock visual keystroke targets. Within 24 progressive lessons, the muscle memory develops to where students no longer look at the keys, boosting average typing speeds from under 10 WPM to over 40 WPM.
 
 This structured progression builds deep tactile familiarity with symbols, numbers, and letter sequences, paving the way for coding syntax structure.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg',
+      image: 'https://images.unsplash.com/photo-1596496050755-c923e73e42e1?w=800&auto=format&fit=crop',
       author: {
         name: 'Sarah Jenkins',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
@@ -113,7 +108,7 @@ This structured progression builds deep tactile familiarity with symbols, number
 Our latest local typing championship brought together over 120 learners to showcase their growth on TypeSpark. The focus wasn't just on maximum speed, but on high precision and perfect home-row posture.
 
 The grand winner took home a new raspberry pi desktop computer to continue writing custom software, showing how basic skills opens real rewards for local families.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
+      image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800&auto=format&fit=crop',
       author: {
         name: 'Ezenwa Obi',
         avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150',
@@ -132,7 +127,7 @@ The grand winner took home a new raspberry pi desktop computer to continue writi
 By building a lightweight node application that synchronizes all client logs over a local area network (LAN) Wi-fi router setup. Teachers can host tests, view progress speeds, and issue electronic certificates without using an active cellular data connection.
 
 This approach reduces schools' running overhead entirely to zero, meaning that technology works even where internet packages are priced beyond budget limits.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/hero_background_1781532776444-BODnaYja.jpg',
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop',
       author: {
         name: 'Tunde Bakare',
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150',
@@ -151,7 +146,7 @@ This approach reduces schools' running overhead entirely to zero, meaning that t
 Once students achieve a baseline typing rate of 30 WPM with accuracy above 95%, our secondary workshops introduce basic visual editing. By showing how structural lines of HTML build physical web layouts, kids connect the keystrokes they practiced to web development and technical expression.
 
 This transition transforms their computer relationship from game usage into real output and design mastery.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/coding_for_kids_1781532812034-B28KANh7.jpg',
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop',
       author: {
         name: 'Amina El-Amin',
         avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150',
@@ -170,7 +165,7 @@ This transition transforms their computer relationship from game usage into real
 In our weekend computer clinics, our top performing students stepped into leadership roles. Teaching parents to search digital encyclopedias, navigate key health platforms, and communicate with loved ones created immense pride.
 
 This peer to peer approach demonstrates that true empowerment is a collective community effort that feeds back into the community support network.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/community_outreach_1781532828060-Bw5rYBl3.jpg',
+      image: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&auto=format&fit=crop',
       author: {
         name: 'Sarah Jenkins',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
@@ -189,7 +184,7 @@ This peer to peer approach demonstrates that true empowerment is a collective co
 To keep hardware running in challenging physical environments, we engineered compact enclosures with customized dust guards. By pairing energy efficient ARM processors with responsive low travel keyboards, our hardware setup requires only small power draws, ideal for classrooms relying on solar cells or backup generator sets.
 
 This rugged construction minimizes downtime and lowers overall school technology upkeep costs.`,
-      image: 'https://lenoirfoundation.vercel.app/assets/digital_literacy_1781532795243-Dsex_HqF.jpg',
+      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&auto=format&fit=crop',
       author: {
         name: 'Chinedu Okeke',
         avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',

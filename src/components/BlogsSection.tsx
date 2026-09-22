@@ -1,12 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
-import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
-import heroImg from '../assets/images/hero_background_1781532776444.jpg';
-import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
-import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
-
 interface BlogsSectionProps {
   onPostClick?: (postId: string) => void;
 }
@@ -17,25 +11,25 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
       id: 'b-1',
       title: 'Digital Literacy Workshop for Students',
       date: '10 Aug 2025',
-      image: communityImg,
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&auto=format&fit=crop',
     },
     {
       id: 'b-2',
       title: 'New Community Learning Hub Launched',
       date: '10 Aug 2025',
-      image: heroImg,
+      image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&auto=format&fit=crop',
     },
     {
       id: 'b-3',
       title: 'Empowering Young Innovators Through Technology',
       date: '10 Aug 2025',
-      image: codingImg,
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&auto=format&fit=crop',
     },
     {
       id: 'b-4',
       title: 'Back to school Support Initiative',
       date: '10 Aug 2025',
-      image: digitalLiteracyImg,
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop',
     },
   ];
 
@@ -80,8 +74,8 @@ export default function BlogsSection({ onPostClick }: BlogsSectionProps) {
                 </div>
 
                 <img
-                  src={typingImg}
-                  alt="TypeSpark Africa typing competition hands visual guide"
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop"
+                  alt="Digital literacy education program"
                   className="w-full h-auto object-cover rounded-[1.5rem]"
                   referrerPolicy="no-referrer"
                   loading="lazy"

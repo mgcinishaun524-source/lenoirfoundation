@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Check } from 'lucide-react';
 
 export default function FlagshipSection() {
-  const keyboardImage = 'https://lenoirfoundation.vercel.app/assets/typing_hand_visual_1781532845930-B3knwWEJ.jpg';
+  const keyboardImage = 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop';
 
   const firstColumnFeatures = [
     '7 African Languages',

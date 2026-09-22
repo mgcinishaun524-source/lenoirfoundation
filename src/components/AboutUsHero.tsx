@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
-
 interface AboutUsHeroProps {
   onDonateClick: () => void;
 }
@@ -15,9 +13,9 @@ export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
       {/* Background Image with Dark Vignette Overlay to match screenshot of About-Hero */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
-          src={digitalLiteracyImg}
-          alt="About Us LeNoir Foundation Library children community"
-          className="w-full h-full object-cover object-center scale-100 opacity-65 brightness-80 transition-all"
+          src="https://www.lenoirfoundation.com/lenoir-logo.png"
+          alt="LeNoir Foundation Background"
+          className="w-full h-full object-cover object-left scale-100 opacity-30 brightness-90 transition-all"
           referrerPolicy="no-referrer"
           loading="eager"
           fetchpriority="high"
@@ -25,8 +23,8 @@ export default function AboutUsHero({ onDonateClick }: AboutUsHeroProps) {
           width={1600}
           height={900}
         />
-        {/* Transparent dark gradient and overlay as pictured */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/35" />
+        {/* Much lighter transparent gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/8 via-black/2 to-black/10" />
       </div>
 
       {/* Main Hero Content Block */}

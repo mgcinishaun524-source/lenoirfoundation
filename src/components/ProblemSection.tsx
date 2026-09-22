@@ -2,10 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Heart } from 'lucide-react';
 
-import typingImg from '../assets/images/typing_hand_visual_1781532845930.jpg';
-import digitalLiteracyImg from '../assets/images/digital_literacy_1781532795243.jpg';
-import codingImg from '../assets/images/coding_for_kids_1781532812034.jpg';
-
 export default function ProblemSection() {
   const cards = [
     {
@@ -14,8 +10,8 @@ export default function ProblemSection() {
       description:
         'In many rural schools across Uganda and Zimbabwe, up to 70 students share a single textbook. Electricity is spotty, internet is non-existent, and children study computer theory on chalkboards without touching a key.',
       stat: '89% Deficit',
-      image: typingImg,
-      alt: 'Student studying computer keyboard',
+      image: 'https://www.lenoirfoundation.com/library-build.jpg',
+      alt: 'Library construction and infrastructure development',
     },
     {
       title: 'Gender Inequality',
@@ -23,8 +19,8 @@ export default function ProblemSection() {
       description:
         'Cultural barriers and economic hardship force young women out of digital spaces first. When families must choose who receives educational resources, girls are far less likely to gain technology training.',
       stat: '40% Equity Gap',
-      image: digitalLiteracyImg,
-      alt: 'Young student observing laptop screen',
+      image: 'https://www.lenoirfoundation.com/it-equipment.jpg',
+      alt: 'IT equipment and computer hardware',
     },
     {
       title: 'Economic Exclusion',
@@ -32,8 +28,8 @@ export default function ProblemSection() {
       description:
         'The modern global economy demands digital literacy for 90% of entry level jobs. Without basic typing, office software, and internet research skills, youth are permanently locked out of modern employment.',
       stat: '3.5x Career Lock',
-      image: codingImg,
-      alt: 'Children engaged in digital classroom learning',
+      image: 'https://static.wixstatic.com/media/a7af79_e1c02a1ffefa4065b726989f317bb22b~mv2.jpg',
+      alt: 'Students engaged in digital learning activities',
     },
   ];
 

@@ -96,7 +96,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <img 
                   src="https://eleven-public-cdn.elevenlabs.io/payloadcms/elevenlabs-official-logo.svg"
                   alt="ElevenLabs"
-                  className="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+                  className="h-20 w-auto group-hover:scale-105 transition-transform duration-200"
                   loading="lazy"
                 />
               </div>
@@ -196,8 +196,11 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       {/* Aligned copyright credits baseline band in dark block precisely as shown */}
       <div className="bg-[#181d24] py-8 text-center text-[10px] sm:text-xs text-slate-300/90 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="tracking-wide">
+          <p className="tracking-wide mb-2">
             Copyright 2026, All Rights Reserved LeNoirFoundation. Website Designed & Developed by ShaunMoyo
+          </p>
+          <p className="text-slate-400 text-[9px] sm:text-[10px]">
+            UK Registered Learning Provider UKPRN Number 10102049
           </p>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Heart, Scale, FileCheck, Shield } from 'lucide-react';
 import AuthoritySection from './AuthoritySection';
-import AboutUsTeam from './AboutUsTeam';
 import ContactSection from './ContactSection';
 import communityImg from '../assets/images/community_outreach_1781532828060.jpg';
 
@@ -62,9 +61,6 @@ export default function AuthorityPage({ onDonateClick, onContactClick, onNewsCli
 
       {/* Main Governance and Authority Cards */}
       <AuthoritySection onPostClick={onNewsClick} />
-
-      {/* Leadership Board */}
-      <AboutUsTeam />
 
       {/* Governance & Compliance Grid */}
       <section className="py-20 bg-[#faf8f5] border-t border-slate-200/60">
