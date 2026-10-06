@@ -3,38 +3,78 @@ import { siteContactEmail } from '../lib/security';
 
 const sections = [
   {
-    title: 'Information you provide',
+    id: 'information-we-collect',
+    title: '1. Information we collect',
     paragraphs: [
-      'If you contact us through a website contact form, we receive the name, email address and message you submit. If you use the newsletter form, you can provide your email address to request updates.',
-      'Please do not include sensitive personal information, or personal information about a child, in a general website enquiry.',
+      'We collect personal information that you choose to send through the website. This may include your name, email address, the subject of your enquiry and the message you write. If you submit the newsletter form, we receive the email address you provide.',
+      'When you visit the website, your hosting provider and external services used to deliver website content may also process technical information such as your IP address, browser and device information, and the pages or resources your browser requests.',
+      'Please do not use a general website form to send sensitive information or personal information about a child.',
     ],
   },
   {
-    title: 'How we use information',
+    id: 'how-we-use-information',
+    title: '2. How we use your information',
     paragraphs: [
-      'We use enquiry details to respond to your request and newsletter email addresses to send the updates you requested. We do not describe the newsletter form as a donation or programme-registration service.',
-      'The donation page currently does not connect to a payment provider. Its form is a demonstration and does not complete a donation or send the entered donor details to LeNoir Foundation. Please contact us before making a donation.',
+      'We use enquiry details to read and respond to your message. We use newsletter email addresses to process your request to receive updates. We may also use information where reasonably necessary to protect the website, address misuse, or meet a legal obligation.',
+      'The donation form currently shown on the website is a demonstration: it is not connected to a payment provider, does not take a payment, and does not send the entered donor details to us.',
     ],
   },
   {
-    title: 'Form providers and other services',
+    id: 'lawful-basis',
+    title: '3. Why we may process your information',
     paragraphs: [
-      'Website enquiries and newsletter submissions are sent to FormSubmit so they can be delivered to the Foundation at its configured contact address. FormSubmit may process and retain submissions under its own privacy terms. Please review the provider’s current privacy information before submitting personal information.',
-      'The website also loads some content or services from other providers, including Google Fonts, Unsplash images and an OpenStreetMap map. When your browser requests that content, the provider may receive technical information such as your IP address. Please refer to the providers’ privacy information for details of their processing.',
+      'Where UK data protection law applies, the lawful basis depends on the purpose. We may rely on our legitimate interests in receiving and responding to enquiries and operating a secure website; your consent where you choose to receive newsletter updates; or a legal obligation where applicable. You can withdraw consent to newsletter updates at any time by contacting us.',
     ],
   },
   {
-    title: 'Cookies, storage and security',
+    id: 'sharing-information',
+    title: '4. Who may receive your information',
     paragraphs: [
-      'The website does not currently use its own analytics or advertising cookies, and the application code does not intentionally save form entries in browser storage. Embedded or external providers may use their own technologies when their content is loaded.',
-      'We take reasonable steps to protect information, but sending information over the internet cannot be guaranteed to be completely secure.',
+      'Contact form and newsletter submissions are sent to FormSubmit, which processes them so they can be delivered to the Foundation. The website also loads or embeds services such as Google Fonts, Unsplash images and OpenStreetMap maps. Those providers may receive technical information from your browser when their content is requested.',
+      'We do not use this website to sell your personal information. We may disclose information if required by law or where necessary to protect our rights, users or services. Third-party providers handle information under their own terms and privacy notices.',
     ],
   },
   {
-    title: 'Retention and your rights',
+    id: 'cookies',
+    title: '5. Cookies and similar technologies',
     paragraphs: [
-      'We keep personal information only for as long as it is needed to respond to an enquiry, provide requested updates, and meet applicable legal or record-keeping requirements. You can ask us to stop sending newsletter updates at any time.',
-      'Depending on the circumstances, UK data protection law may give you rights to access, correct, erase or restrict the use of your personal information, to object to certain processing, and to complain to the Information Commissioner’s Office (ICO). Contact us first if you have a question or request.',
+      'The website application does not currently set its own analytics or advertising cookies. Your browser may make requests to external content or hosting providers, and those providers may use their own cookies or similar technologies under their policies. You can manage cookies using your browser settings.',
+    ],
+  },
+  {
+    id: 'international-transfers',
+    title: '6. International processing',
+    paragraphs: [
+      'The Foundation and its website service providers may process information in countries outside the United Kingdom. Where applicable, providers are responsible for describing the safeguards they use for international transfers in their own privacy information. Contact us if you would like more information about a particular transfer.',
+    ],
+  },
+  {
+    id: 'retention',
+    title: '7. How long we keep information',
+    paragraphs: [
+      'We keep enquiry and newsletter information only for as long as reasonably needed for the purpose it was collected, to manage our relationship with you, and to meet applicable legal requirements. FormSubmit may separately retain submissions under its own retention practices. You can ask us to stop sending newsletter updates at any time.',
+    ],
+  },
+  {
+    id: 'children',
+    title: '8. Children’s information',
+    paragraphs: [
+      'The Foundation’s programmes may support children, but the website contact and newsletter forms are not intended for children to submit their personal information. A parent, guardian or other responsible adult should contact us on a child’s behalf. If you believe a child has sent us personal information through the website, please contact us so we can review the request.',
+    ],
+  },
+  {
+    id: 'your-rights',
+    title: '9. Your privacy rights',
+    paragraphs: [
+      'Depending on the circumstances, UK data protection law may give you the right to request access to your personal information, ask us to correct or erase it, restrict or object to certain processing, or request a copy in a portable format. Where processing is based on consent, you may withdraw that consent. These rights are subject to legal conditions and exemptions.',
+      'To exercise a right, contact us using the details below. You also have the right to raise a concern with the UK Information Commissioner’s Office (ICO) at ico.org.uk.',
+    ],
+  },
+  {
+    id: 'updates',
+    title: '10. Updates to this notice',
+    paragraphs: [
+      'We may update this Privacy Notice when our website, practices or legal requirements change. The “Last updated” date at the top of this page shows when it was most recently revised. Please check this page periodically.',
     ],
   },
 ];
@@ -48,16 +88,33 @@ export default function PrivacyPolicyPage() {
             LeNoir Foundation
           </p>
           <h1 className="text-4xl font-black tracking-tight text-[#112335] sm:text-5xl">
-            Privacy Policy
+            Privacy Notice
           </h1>
+          <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Last updated October 6, 2026
+          </p>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-            This notice explains what information may be handled when you visit this website, contact us or request newsletter updates.
+            This notice explains how LeNoir Foundation may collect, use and share personal information when you visit our website or contact us.
           </p>
         </header>
 
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+          <h2 className="mb-4 text-xl font-extrabold text-[#112335]">Contents</h2>
+          <ol className="grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
+            {sections.map(({ id, title }) => (
+              <li key={id}>
+                <a href={`#${id}`} className="hover:text-[#f15a24] hover:underline">
+                  {title}
+                </a>
+              </li>
+            ))}
+            <li><a href="#contact-us" className="hover:text-[#f15a24] hover:underline">Contact us</a></li>
+          </ol>
+        </section>
+
         <div className="space-y-8">
-          {sections.map(({ title, paragraphs }) => (
-            <section key={title}>
+          {sections.map(({ id, title, paragraphs }) => (
+            <section key={id} id={id} className="scroll-mt-24">
               <h2 className="mb-3 text-xl font-extrabold text-[#112335]">{title}</h2>
               <div className="space-y-3 text-sm leading-7 text-slate-600 sm:text-base">
                 {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -66,10 +123,10 @@ export default function PrivacyPolicyPage() {
           ))}
         </div>
 
-        <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
-          <h2 className="mb-3 text-xl font-extrabold text-[#112335]">Contact us</h2>
+        <section id="contact-us" className="mt-10 scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+          <h2 className="mb-3 text-xl font-extrabold text-[#112335]">11. Contact us</h2>
           <p className="text-sm leading-7 text-slate-600 sm:text-base">
-            LeNoir Foundation, 86-90 Paul Street, London, EC2A 4NE, United Kingdom.
+            For privacy questions or requests, contact LeNoir Foundation at 86-90 Paul Street, London, EC2A 4NE, United Kingdom.
           </p>
           <a
             href={`mailto:${siteContactEmail}`}
@@ -80,7 +137,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <p className="mt-8 text-xs leading-6 text-slate-500">
-          This website notice is general information, not legal advice. The Foundation should review it against its actual data handling, provider arrangements and retention practices before relying on it as its formal privacy notice.
+          This notice should be checked against the Foundation’s actual provider arrangements, data retention practices and legal obligations. It is general information, not legal advice.
         </p>
       </div>
     </article>
