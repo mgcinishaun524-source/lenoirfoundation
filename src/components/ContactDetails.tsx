@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, MapPin, Mail, Share2, Facebook, Twitter, Linkedin, Instagram, ArrowRight, CheckCircle } from 'lucide-react';
-import { safeHref, safeMailto, siteContactEmail } from '../lib/security';
-
-const WEB3FORMS_KEY = '3530d940-046d-42c5-8396-b353a26c38ce';
+import { safeHref, safeMailto, sendFoundationEmail, siteContactEmail } from '../lib/security';
 
 export default function ContactDetails() {
   const [result, setResult] = useState('');
@@ -14,29 +12,28 @@ export default function ContactDetails() {
     setSubmitStatus('submitting');
     setResult('Sending...');
 
-    const formData = new FormData(e.currentTarget);
-    formData.append('access_key', WEB3FORMS_KEY);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get('name') ?? '').trim();
+    const email = String(formData.get('email') ?? '').trim();
+    const subject = String(formData.get('subject') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
+      await sendFoundationEmail({
+        name,
+        email,
+        subject: subject || `New website enquiry from ${name}`,
+        message,
       });
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitStatus('success');
-        setResult('Form Submitted Successfully');
-        (e.target as HTMLFormElement).reset();
-        setTimeout(() => { setSubmitStatus('idle'); setResult(''); }, 6000);
-      } else {
-        setSubmitStatus('error');
-        setResult(data.message || 'Something went wrong. Please try again.');
-        setTimeout(() => { setSubmitStatus('idle'); setResult(''); }, 6000);
-      }
-    } catch {
+      setSubmitStatus('success');
+      setResult('Your message has been sent. We will contact you soon.');
+      form.reset();
+      setTimeout(() => { setSubmitStatus('idle'); setResult(''); }, 6000);
+    } catch (error) {
+      console.error('Get in Touch form submission failed:', error);
       setSubmitStatus('error');
-      setResult('A network error occurred. Please try again.');
+      setResult(error instanceof Error ? error.message : 'Your message could not be sent. Please email us directly.');
       setTimeout(() => { setSubmitStatus('idle'); setResult(''); }, 6000);
     }
   };

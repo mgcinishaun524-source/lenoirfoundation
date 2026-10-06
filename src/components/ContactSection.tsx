@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from 'lucide-react';
 import {
-  getSafeFormSubmitEndpoint,
-  sanitizeHeaderString,
-  sanitizePlainText,
+  sendFoundationEmail,
   safeMailto,
   siteContactEmail,
 } from '../lib/security';
@@ -17,6 +15,7 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,51 +23,33 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
       onNavigateToContact();
       return;
     }
-    if (!formData.name || !formData.email || !formData.message) {
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    if (!name || !email || !message) {
       setStatus('error');
-      return;
-    }
-
-    const endpoint = getSafeFormSubmitEndpoint();
-    if (!endpoint) {
-      setStatus('error');
+      setStatusMessage('Please fill out your name, email address, and message.');
       return;
     }
 
     setLoading(true);
     setStatus('idle');
+    setStatusMessage('');
 
     try {
-      const cleanName = sanitizeHeaderString(formData.name, 80);
-      const cleanEmail = sanitizeHeaderString(formData.email, 120);
-      const cleanSubject = sanitizeHeaderString(
-        cleanName
-          ? `New Contact Message  LeNoir Foundation · from ${cleanName}${cleanEmail ? ` (${cleanEmail})` : ''}`
-          : 'New Contact Message  LeNoir Foundation',
-        180,
-      );
-      const formPayload = new FormData(e.currentTarget);
-      formPayload.set('name', cleanName);
-      formPayload.set('email', cleanEmail);
-      formPayload.set('message', sanitizePlainText(formData.message, 4000));
-      formPayload.set('_subject', cleanSubject);
-      formPayload.set('_honey', '');
-      formPayload.set('_captcha', 'false');
-
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        body: formPayload,
+      await sendFoundationEmail({
+        name,
+        email,
+        message,
+        subject: `New contact message from ${name}`,
       });
-
-      const data = await response.json();
-      if (data.success === 'true' || response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
+      setStatus('success');
+      setStatusMessage('Your message has been sent. We will contact you soon.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
       setStatus('error');
+      setStatusMessage(error instanceof Error ? error.message : 'Your message could not be sent. Please email us directly.');
     } finally {
       setLoading(false);
     }
@@ -76,7 +57,10 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (status === 'error') setStatus('idle');
+    if (status !== 'idle') {
+      setStatus('idle');
+      setStatusMessage('');
+    }
   };
 
   const handleSectionClick = (e: React.MouseEvent) => {
@@ -192,6 +176,8 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
                   id="form-name"
                   type="text"
                   name="name"
+                  required
+                  maxLength={80}
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
@@ -205,6 +191,8 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
                   id="form-email"
                   type="email"
                   name="email"
+                  required
+                  maxLength={120}
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
@@ -217,6 +205,8 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
                 <textarea
                   id="form-message"
                   name="message"
+                  required
+                  maxLength={4000}
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
@@ -227,25 +217,21 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
 
               {/* Success/Error Alerts inside form */}
               <AnimatePresence mode="wait">
-                {status === 'success' && (
+                {status !== 'idle' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-xs sm:text-sm flex items-center gap-2"
+                    role={status === 'error' ? 'alert' : 'status'}
+                    aria-live="polite"
+                    className={`p-4 rounded-xl text-xs sm:text-sm flex items-center gap-2 ${
+                      status === 'success'
+                        ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+                        : 'bg-rose-500/10 border border-rose-500/20 text-rose-300'
+                    }`}
                   >
-                    <CheckCircle size={16} /> Message sent successfully! We will contact you soon.
-                  </motion.div>
-                )}
-
-                {status === 'error' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-xs sm:text-sm flex items-center gap-2"
-                  >
-                    <AlertCircle size={16} /> Please fill out all required fields.
+                    {status === 'success' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
+                    {statusMessage}
                   </motion.div>
                 )}
               </AnimatePresence>

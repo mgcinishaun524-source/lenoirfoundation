@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { SendHorizontal, Check } from 'lucide-react';
 import LeNoirLogo from './LeNoirLogo';
-import { getSafeFormSubmitEndpoint, sanitizeHeaderString, safeHref, siteContactEmail, sitePrimaryDomain } from '../lib/security';
+import { sendFoundationEmail, siteContactEmail } from '../lib/security';
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme' | 'privacy' | 'terms';
 
 interface FooterProps {
   setCurrentPage?: (page: PageType) => void;
@@ -11,39 +11,37 @@ interface FooterProps {
 
 export default function Footer({ setCurrentPage }: FooterProps) {
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [subscribeMessage, setSubscribeMessage] = useState('');
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedEmail = email.trim();
     const simpleEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!trimmedEmail || !trimmedEmail.includes('@') || !simpleEmail.test(trimmedEmail)) {
+      setSubscribeStatus('error');
+      setSubscribeMessage('Please enter a valid email address.');
       return;
     }
-    const endpoint = getSafeFormSubmitEndpoint();
-    if (endpoint) {
-      try {
-        const cleanEmail = sanitizeHeaderString(trimmedEmail, 120);
-        await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            _subject: sanitizeHeaderString(`New Newsletter Subscriber from LeNoir Foundation  ${cleanEmail}`, 160),
-            email: cleanEmail,
-            _honey: '',
-            _captcha: 'false',
-          }),
-        });
-      } catch (err) {
-        // Quiet fallback
-      }
+    setSubscribeStatus('submitting');
+    setSubscribeMessage('');
+    try {
+      await sendFoundationEmail({
+        email: trimmedEmail,
+        subject: `New newsletter subscription from ${trimmedEmail}`,
+      });
+      setSubscribeStatus('success');
+      setSubscribeMessage('Thanks for subscribing!');
+      setEmail('');
+      setTimeout(() => {
+        setSubscribeStatus('idle');
+        setSubscribeMessage('');
+      }, 4500);
+    } catch (error) {
+      console.error('Newsletter subscription failed:', error);
+      setSubscribeStatus('error');
+      setSubscribeMessage(error instanceof Error ? error.message : 'Your subscription could not be sent. Please email us directly.');
     }
-    setSubscribed(true);
-    setEmail('');
-    setTimeout(() => setSubscribed(false), 4500);
   };
 
   const handleNavItemClick = (
@@ -109,12 +107,21 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
           
-          {/* Column 1: Centered Badge Logo */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-center lg:items-start select-none">
+          {/* Column 1: Logo and charity contact details */}
+          <div className="lg:col-span-4 flex flex-col items-center justify-center lg:items-start">
             {/* Click logo to return home */}
             <a href="#home" onClick={(e) => handleNavItemClick(e, '#home')} className="cursor-pointer">
               <LeNoirLogo variant="badge" className="scale-105" />
             </a>
+            <address className="mt-6 space-y-1 text-center md:text-left text-xs sm:text-sm font-semibold not-italic leading-relaxed text-[#5a6a7c]">
+              <p>86-90 Paul Street</p>
+              <p>London, EC2A 4NE</p>
+              <p>UNITED KINGDOM</p>
+              <a href={`mailto:${siteContactEmail}`} className="inline-block hover:text-[#f15a24] transition-colors">
+                {siteContactEmail}
+              </a>
+              <p className="pt-2 text-xs">Registered Charity in England and Wales (No: 1197474)</p>
+            </address>
           </div>
 
           {/* Column 2: EXPLORE Section */}
@@ -163,8 +170,14 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <input
                   type="email"
                   value={email}
-                  disabled={subscribed}
-                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={subscribeStatus === 'submitting' || subscribeStatus === 'success'}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (subscribeStatus === 'error') {
+                      setSubscribeStatus('idle');
+                      setSubscribeMessage('');
+                    }
+                  }}
                   placeholder="Your email address"
                   className="w-full px-4 py-3 bg-[#e2ecf5]/65 text-slate-800 placeholder:text-slate-400 text-xs sm:text-sm outline-none font-sans"
                   required
@@ -173,18 +186,21 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 {/* Rectangular Deep Crimson Crimson Button */}
                 <button
                   type="submit"
-                  disabled={subscribed}
+                  disabled={subscribeStatus === 'submitting' || subscribeStatus === 'success'}
                   className="bg-[#b21c24] hover:bg-[#92141a] text-white p-3.5 transition-colors cursor-pointer shrink-0 h-[42px] w-[42px] flex items-center justify-center"
                   aria-label="Subscribe To Newsletter"
                 >
-                  {subscribed ? <Check size={14} className="stroke-[3]" /> : <SendHorizontal size={14} className="stroke-[3]" />}
+                  {subscribeStatus === 'success' ? <Check size={14} className="stroke-[3]" /> : <SendHorizontal size={14} className="stroke-[3]" />}
                 </button>
               </form>
 
-              {/* Optional sub status feedback */}
-              {subscribed && (
-                <span className="block text-left mt-2 text-[10px] font-semibold text-emerald-600 font-mono">
-                  ✓ Successfully subscribed!
+              {subscribeMessage && (
+                <span
+                  role={subscribeStatus === 'error' ? 'alert' : 'status'}
+                  aria-live="polite"
+                  className={`block text-left mt-2 text-[10px] font-semibold ${subscribeStatus === 'error' ? 'text-rose-600' : 'text-emerald-600'}`}
+                >
+                  {subscribeMessage}
                 </span>
               )}
             </div>
@@ -197,11 +213,35 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="bg-[#181d24] py-8 text-center text-[10px] sm:text-xs text-slate-300/90 font-normal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="tracking-wide mb-2">
-            Copyright 2026, All Rights Reserved LeNoirFoundation. Website Designed & Developed by ShaunMoyo
+            Copyright 2026, All Rights Reserved LeNoirFoundation. Website Designed &amp; Developed by{' '}
+            <a
+              href="http://mgcinishaunportfolio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white underline underline-offset-2 transition-colors"
+            >
+              ShaunMoyo
+            </a>
           </p>
           <p className="text-slate-400 text-[9px] sm:text-[10px]">
             UK Registered Learning Provider UKPRN Number 10102049
           </p>
+          <nav aria-label="Legal information" className="mt-4 flex justify-center gap-6 text-[10px] sm:text-xs">
+            <a
+              href="#privacy"
+              onClick={(e) => handleNavItemClick(e, '#privacy', 'privacy')}
+              className="text-slate-300 hover:text-white transition-colors underline underline-offset-4"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#terms"
+              onClick={(e) => handleNavItemClick(e, '#terms', 'terms')}
+              className="text-slate-300 hover:text-white transition-colors underline underline-offset-4"
+            >
+              Terms and Conditions
+            </a>
+          </nav>
         </div>
       </div>
 

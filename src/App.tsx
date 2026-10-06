@@ -36,9 +36,11 @@ const AuthorityPage = lazy(() => import('./components/AuthorityPage'));
 const GetInTouchPage = lazy(() => import('./components/GetInTouchPage'));
 const DigitalLiteracyPage = lazy(() => import('./components/DigitalLiteracyPage'));
 const UKProgrammePage = lazy(() => import('./components/UKProgrammePage'));
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
+const TermsAndConditionsPage = lazy(() => import('./components/TermsAndConditionsPage'));
 const AIAssistant = lazy(() => import('./components/AIAssistant'));
 
-type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme';
+type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme' | 'privacy' | 'terms';
 
 // Minimal fallback — no spinner, just invisible placeholder to avoid layout shift
 const PageFallback = () => <div className="min-h-screen bg-[#faf8f5]" aria-hidden="true" />;
@@ -119,6 +121,10 @@ export default function App() {
             <DigitalLiteracyPage onDonateClick={handleDonateRedirect} onContactClick={() => setCurrentPage('contact')} />
           ) : currentPage === 'ukprogramme' ? (
             <UKProgrammePage onDonateClick={handleDonateRedirect} onContactClick={() => setCurrentPage('contact')} />
+          ) : currentPage === 'privacy' ? (
+            <PrivacyPolicyPage />
+          ) : currentPage === 'terms' ? (
+            <TermsAndConditionsPage />
           ) : currentPage === 'contact' ? (
             <>
               <ContactHero onDonateClick={handleDonateRedirect} />
