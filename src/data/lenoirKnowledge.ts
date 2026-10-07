@@ -113,7 +113,7 @@ export const lenoirKnowledge = {
       address: "85-90 Paul Street, Shoreditch, London EC2A 4NE, UK",
       established: "2014",
       team: "15+ staff members",
-      contact: "+44-20-7101-4110"
+      contact: "+44 7856 526631"
     },
     
     africa: {

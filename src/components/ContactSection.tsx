@@ -125,7 +125,7 @@ export default function ContactSection({ onNavigateToContact }: ContactSectionPr
                       Phone support
                     </h4>
                     <p className="mt-1 text-xs sm:text-sm text-slate-500 font-sans leading-relaxed font-normal">
-                      +44 20 7101 4110<br />
+                      +44 7856 526631<br />
                       Mon to Fri: 9am to 5pm GMT
                     </p>
                   </div>

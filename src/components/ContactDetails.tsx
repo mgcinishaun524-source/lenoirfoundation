@@ -71,7 +71,7 @@ export default function ContactDetails() {
                   <Phone size={12} /> Call Center
                 </span>
                 <span className="font-sans text-base font-extrabold text-[#112335] leading-snug">
-                  +44 20 7101 4110
+                  +44 7856 526631
                 </span>
                 <span className="font-sans text-xs sm:text-sm text-slate-400 mt-1 font-medium">
                   Mon to Fri: 9:00 AM to 5:00 PM GMT
