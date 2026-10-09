@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { SendHorizontal, Check } from 'lucide-react';
-import LeNoirLogo from './LeNoirLogo';
 import { sendFoundationEmail, siteContactEmail } from '../lib/security';
 
 type PageType = 'landing' | 'problem' | 'promise' | 'about' | 'model' | 'impact' | 'authority' | 'news' | 'contact' | 'donate' | 'getintouch' | 'training' | 'ukprogramme' | 'privacy' | 'terms';
@@ -107,13 +106,9 @@ export default function Footer({ setCurrentPage }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
           
-          {/* Column 1: Logo and charity contact details */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-center lg:items-start">
-            {/* Click logo to return home */}
-            <a href="#home" onClick={(e) => handleNavItemClick(e, '#home')} className="cursor-pointer">
-              <LeNoirLogo variant="badge" className="scale-105" />
-            </a>
-            <address className="mt-6 space-y-1 text-center md:text-left text-xs sm:text-sm font-semibold not-italic leading-relaxed text-[#5a6a7c]">
+          {/* Column 1: Charity contact details */}
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+            <address className="space-y-1 text-center md:text-left text-xs sm:text-sm font-semibold not-italic leading-relaxed text-[#5a6a7c]">
               <p>86-90 Paul Street</p>
               <p>London, EC2A 4NE</p>
               <p>UNITED KINGDOM</p>
@@ -121,6 +116,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 {siteContactEmail}
               </a>
               <p className="pt-2 text-xs">Registered Charity in England and Wales (No: 1197474)</p>
+              <p className="text-xs">UK Registered Learning Provider UKPRN Number 10102049</p>
             </address>
           </div>
 
@@ -222,9 +218,6 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             >
               ShaunMoyo
             </a>
-          </p>
-          <p className="text-slate-400 text-[9px] sm:text-[10px]">
-            UK Registered Learning Provider UKPRN Number 10102049
           </p>
           <nav aria-label="Legal information" className="mt-4 flex justify-center gap-6 text-[10px] sm:text-xs">
             <a
